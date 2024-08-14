@@ -1,11 +1,13 @@
-import './App.css';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
+import NavBar from './components/NavBar';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to FitShare, Share Your Experiences and Wins!</h1>
-      <Button variant="primary">Click Me!</Button>
+      <NavBar />
+      <Button variant="primary">Primary</Button>
     </div>
   );
 }
