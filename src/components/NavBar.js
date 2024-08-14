@@ -1,31 +1,34 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import logo from '../assets/logo2.png';
-import { FaHome, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
+import { FaHome, FaUser, FaCog, FaSearch } from 'react-icons/fa'; // Importing icons from Font Awesome
+import logo from '../assets/logo.png'; // Your logo path
 
 function NavBar() {
   return (
-    <Navbar bg="light" expand="md" fixed="top" style={{ padding: '10px 20px' }}>
+    <Navbar bg="light" expand="md" fixed="top">
       <Container>
         <Navbar.Brand href="#home">
           <img
             src={logo}
-            alt="FitShare logo"
+            alt="Fit Share logo"
             height="45"
-            style={{ paddingRight: '10px', maxHeight: '45px' }}
           />
+          Fit Share
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ borderColor: 'rgba(0,0,0,0.1)' }} />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#home" aria-label="Home">
-              <FaHome style={{ marginRight: "8px" }} /> Home
+            <Nav.Link href="#home">
+              <FaHome /> Home
             </Nav.Link>
-            <Nav.Link href="#signin" aria-label="Sign in">
-              <FaSignInAlt style={{ marginRight: "8px" }} /> Sign in
+            <Nav.Link href="#explore">
+              <FaSearch /> Explore
             </Nav.Link>
-            <Nav.Link href="#signup" aria-label="Sign up">
-              <FaUserPlus style={{ marginRight: "8px" }} /> Sign up
+            <Nav.Link href="#profile">
+              <FaUser /> Profile
+            </Nav.Link>
+            <Nav.Link href="#settings">
+              <FaCog /> Settings
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
