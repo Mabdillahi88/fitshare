@@ -1,4 +1,22 @@
 .NavBar {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
-  }
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+}
+
+.NavbarBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add spacing between logo and text */
+}
+
+.Logo {
+  margin-right: 10px; /* Adjust spacing from the text */
+}
+
+.NavLink {
+  padding: 5px;
+}
+
+.Active i {
+  color: #2142b2;
+}
