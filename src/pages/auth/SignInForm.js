@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import Form from "react-bootstrap/Form";
@@ -14,10 +14,10 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
-  const setCurrentUser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -28,17 +28,6 @@ function SignInForm() {
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-      setCurrentUser(data.user);
-      history.push("/");
-    } catch (err) {
-      setErrors(err.response?.data);
-    }
-  };
 
   const handleChange = (event) => {
     setSignInData({
@@ -47,11 +36,23 @@ function SignInForm() {
     });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      setCurrentUser(data);
+      history.push("/");
+    } catch (err) {
+      setErrors(err.response?.data || {});
+    }
+  };
+
   return (
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>sign in</h1>
+          <h1 className={styles.Header}>Sign In</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
