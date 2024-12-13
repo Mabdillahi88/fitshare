@@ -38,19 +38,10 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("https://fitshare-d428ae7f1a9.herokuapp.com/dj-rest-auth/registration/", signUpData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true, // Include cookies for authentication
-      });
+      await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
     } catch (err) {
-      if (err.response && err.response.data) {
-        setErrors(err.response.data);
-      } else {
-        setErrors({ non_field_errors: ["An unexpected error occurred."] });
-      }
+      setErrors(err.response?.data);
     }
   };
 
@@ -58,11 +49,11 @@ const SignUpForm = () => {
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>Sign Up</h1>
+          <h1 className={styles.Header}>sign up</h1>
 
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
-              <Form.Label className="d-none">Username</Form.Label>
+              <Form.Label className="d-none">username</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
@@ -96,11 +87,11 @@ const SignUpForm = () => {
             ))}
 
             <Form.Group controlId="password2">
-              <Form.Label className="d-none">Confirm Password</Form.Label>
+              <Form.Label className="d-none">Confirm password</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="password"
-                placeholder="Confirm Password"
+                placeholder="Confirm password"
                 name="password2"
                 value={password2}
                 onChange={handleChange}
@@ -116,7 +107,7 @@ const SignUpForm = () => {
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
             >
-              Sign Up
+              Sign up
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
