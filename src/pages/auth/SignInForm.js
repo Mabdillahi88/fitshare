@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import Form from "react-bootstrap/Form";
@@ -14,10 +14,10 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext"; // Updated import
 
 function SignInForm() {
-  const setCurrentUser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser(); // Using custom hook
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -28,14 +28,17 @@ function SignInForm() {
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-      setCurrentUser(data.user);
-      history.push("/");
+      console.log("Login response:", data); // Debug login response
+      setCurrentUser(data.user); // Update current user globally
+      history.push("/"); // Redirect to home
     } catch (err) {
+      console.log("Login error:", err.response?.data); // Debug errors
       setErrors(err.response?.data);
     }
   };
@@ -50,8 +53,8 @@ function SignInForm() {
   return (
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={6}>
-        <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>sign in</h1>
+        <Container className={`${appStyles.Content} p-4`}>
+          <h1 className={styles.Header}>Sign in</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
@@ -86,6 +89,7 @@ function SignInForm() {
                 {message}
               </Alert>
             ))}
+
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
@@ -111,7 +115,9 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
+          src={
+            "https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"
+          }
         />
       </Col>
     </Row>

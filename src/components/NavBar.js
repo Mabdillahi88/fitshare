@@ -2,13 +2,34 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { NavLink, useHistory } from "react-router-dom";
+import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import axios from "axios";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+  const history = useHistory();
 
-  const loggedInIcons = <>{currentUser?.username}</>;
+  const handleLogout = async () => {
+    try {
+      await axios.post("/dj-rest-auth/logout/");
+      setCurrentUser(null); // Clear the current user context
+      history.push("/signin"); // Redirect to the sign-in page
+    } catch (err) {
+      console.log("Logout error:", err.response?.data);
+    }
+  };
+
+  const loggedInIcons = (
+    <>
+      <span className={styles.NavUsername}>{currentUser?.username}</span>
+      <Nav.Link onClick={handleLogout} className={styles.NavLink}>
+        <i className="fas fa-sign-out-alt"></i> Logout
+      </Nav.Link>
+    </>
+  );
+
   const loggedOutIcons = (
     <>
       <NavLink
@@ -16,14 +37,14 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/signin"
       >
-        <i className="fas fa-sign-in-alt"></i>Sign in
+        <i className="fas fa-sign-in-alt"></i> Sign in
       </NavLink>
       <NavLink
         to="/signup"
         className={styles.NavLink}
         activeClassName={styles.Active}
       >
-        <i className="fas fa-user-plus"></i>Sign up
+        <i className="fas fa-user-plus"></i> Sign up
       </NavLink>
     </>
   );
@@ -46,9 +67,8 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              <i className="fas fa-home"></i> Home
             </NavLink>
-
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
