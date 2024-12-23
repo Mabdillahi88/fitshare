@@ -2,34 +2,68 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-import { NavLink, useHistory } from "react-router-dom";
-import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import { NavLink } from "react-router-dom";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar"; // Make sure you have this Avatar component
 import axios from "axios";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-  const history = useHistory();
 
   const handleLogout = async () => {
     try {
       await axios.post("/dj-rest-auth/logout/");
       setCurrentUser(null); // Clear the current user context
-      history.push("/signin"); // Redirect to the sign-in page
     } catch (err) {
       console.log("Logout error:", err.response?.data);
     }
   };
 
+  // Icon for adding a post (visible only when logged in)
+  const addPostIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/posts/create"
+    >
+      <i className="far fa-plus-square"></i> Add post
+    </NavLink>
+  );
+
+  // Links and features for logged-in users
   const loggedInIcons = (
     <>
-      <span className={styles.NavUsername}>{currentUser?.username}</span>
-      <Nav.Link onClick={handleLogout} className={styles.NavLink}>
-        <i className="fas fa-sign-out-alt"></i> Logout
-      </Nav.Link>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed"
+      >
+        <i className="fas fa-stream"></i> Feed
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/liked"
+      >
+        <i className="fas fa-heart"></i> Liked
+      </NavLink>
+      <NavLink className={styles.NavLink} to="/" onClick={handleLogout}>
+        <i className="fas fa-sign-out-alt"></i> Sign out
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+      </NavLink>
     </>
   );
 
+  // Links for logged-out users
   const loggedOutIcons = (
     <>
       <NavLink
@@ -57,7 +91,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-
+        {currentUser && addPostIcon}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
