@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
-import Container from "react-bootstrap/Container";
-
 import { Link, useHistory } from "react-router-dom";
+import { Form, Alert, Button, Col, Row, Image, Container } from "react-bootstrap";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { useSetCurrentUser } from "../../contexts/CurrentUserContext"; // Updated import
+
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
-  const setCurrentUser = useSetCurrentUser(); // Using custom hook
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -26,7 +20,6 @@ function SignInForm() {
   const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
 
   const handleSubmit = async (event) => {
@@ -34,11 +27,11 @@ function SignInForm() {
 
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-      console.log("Login response:", data); // Debug login response
-      setCurrentUser(data.user); // Update current user globally
-      history.push("/"); // Redirect to home
+      console.log("Login response:", data); // Debugging log for successful response
+      setCurrentUser(data.user);
+      history.push("/");
     } catch (err) {
-      console.log("Login error:", err.response?.data); // Debug errors
+      console.log("Login error:", err.response?.data); // Debugging log for errors
       setErrors(err.response?.data);
     }
   };
@@ -115,9 +108,7 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={
-            "https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"
-          }
+          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
         />
       </Col>
     </Row>

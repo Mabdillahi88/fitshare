@@ -1,7 +1,10 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://fitshareapi-b9588b2c11b9.herokuapp.com/"; // API base URL with trailing slash
-axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
+// Set the base URL for the API
+axios.defaults.baseURL = "https://fitshareapi-b9588b2c11b9.herokuapp.com/"; // API base URL
+axios.defaults.headers.post["Content-Type"] = "multipart/form-data"; // Default header for POST requests
 axios.defaults.withCredentials = true; // Allow cookies for authentication
 
-export default axios;
+// Create separate axios instances for requests and responses
+export const axiosReq = axios.create(); // For making API requests
+export const axiosRes = axios.create(); // For handling API responses
