@@ -1,25 +1,26 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
+
+import Asset from "../../components/Asset";
 
 import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
-import { Image, Alert } from "react-bootstrap";
 
-import axios from "axios";
+import { useHistory } from "react-router";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
-
   const [postData, setPostData] = useState({
     title: "",
     content: "",
@@ -27,6 +28,7 @@ function PostCreateForm() {
   });
   const { title, content, image } = postData;
 
+  const imageInput = useRef(null);
   const history = useHistory();
 
   // Handle input field changes
@@ -37,13 +39,13 @@ function PostCreateForm() {
     });
   };
 
-  // Handle image upload
+  // Handle image upload and preview
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
       setPostData({
         ...postData,
-        image: event.target.files[0], // Store the file for submission
+        image: URL.createObjectURL(event.target.files[0]), // Preview the image
       });
     }
   };
@@ -55,14 +57,15 @@ function PostCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", image);
+    formData.append("image", imageInput.current.files[0]); // Submit the file object
 
     try {
-      await axios.post("/posts/", formData);
-      history.push("/"); // Redirect to homepage after success
+      const { data } = await axiosReq.post("/posts/", formData);
+      history.push(`/posts/${data.id}`); // Redirect to the new post's detail page
     } catch (err) {
-      if (err.response?.data) {
-        setErrors(err.response.data);
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
       }
     }
   };
@@ -77,12 +80,13 @@ function PostCreateForm() {
           value={title}
           onChange={handleChange}
         />
-        {errors.title?.map((message, idx) => (
-          <Alert key={idx} variant="warning">
-            {message}
-          </Alert>
-        ))}
       </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group>
         <Form.Label>Content</Form.Label>
         <Form.Control
@@ -92,12 +96,12 @@ function PostCreateForm() {
           value={content}
           onChange={handleChange}
         />
-        {errors.content?.map((message, idx) => (
-          <Alert key={idx} variant="warning">
-            {message}
-          </Alert>
-        ))}
       </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
@@ -105,10 +109,7 @@ function PostCreateForm() {
       >
         Cancel
       </Button>
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        type="submit"
-      >
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         Create
       </Button>
     </div>
@@ -125,11 +126,7 @@ function PostCreateForm() {
               {image ? (
                 <>
                   <figure>
-                    <Image
-                      className={appStyles.Image}
-                      src={URL.createObjectURL(image)} // Preview the image
-                      rounded
-                    />
+                    <Image className={appStyles.Image} src={image} rounded />
                   </figure>
                   <div>
                     <Form.Label
@@ -156,13 +153,15 @@ function PostCreateForm() {
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
+                ref={imageInput} // Ref for file input
               />
-              {errors.image?.map((message, idx) => (
-                <Alert key={idx} variant="warning">
-                  {message}
-                </Alert>
-              ))}
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
