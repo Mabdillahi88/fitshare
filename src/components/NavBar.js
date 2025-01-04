@@ -15,19 +15,17 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  // Use the toggle hook
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
-      setCurrentUser(null); // Clear user context
+      setCurrentUser(null);
     } catch (err) {
-      console.log("Logout error:", err.response?.data);
+      console.log(err);
     }
   };
 
-  // Add post icon for logged-in users
   const addPostIcon = (
     <NavLink
       className={styles.NavLink}
@@ -37,8 +35,6 @@ const NavBar = () => {
       <i className="far fa-plus-square"></i>Add post
     </NavLink>
   );
-
-  // Logged-in user links
   const loggedInIcons = (
     <>
       <NavLink
@@ -66,8 +62,6 @@ const NavBar = () => {
       </NavLink>
     </>
   );
-
-  // Logged-out user links
   const loggedOutIcons = (
     <>
       <NavLink
@@ -116,6 +110,7 @@ const NavBar = () => {
             >
               <i className="fas fa-home"></i>Home
             </NavLink>
+
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
