@@ -11,6 +11,7 @@ export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({ children }) => {
   const [profileData, setProfileData] = useState({
+    // we will use the pageProfile later!
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
   });
@@ -20,7 +21,7 @@ export const ProfileDataProvider = ({ children }) => {
   const handleFollow = async (clickedProfile) => {
     try {
       const { data } = await axiosRes.post("/followers/", {
-        followed: clickedProfile.username, // Changed to send username
+        followed: clickedProfile.id,
       });
 
       setProfileData((prevState) => ({
@@ -38,7 +39,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err.response?.data || err.message);
+      console.log(err);
     }
   };
 
@@ -61,7 +62,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err.response?.data || err.message);
+      console.log(err);
     }
   };
 
@@ -76,7 +77,7 @@ export const ProfileDataProvider = ({ children }) => {
           popularProfiles: data,
         }));
       } catch (err) {
-        console.log(err.response?.data || err.message);
+        console.log(err);
       }
     };
 
