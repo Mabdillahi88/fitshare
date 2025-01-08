@@ -4,4 +4,6 @@
   justify-content: center;
   align-items: center;
   min-height: 120px;
+  background: linear-gradient(135deg, #f0f8ff, #b3e6ff);
+  border-radius: 10px;
 }
