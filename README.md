@@ -1,6 +1,6 @@
 # Fitshare <img src="/workspace/fitshare/src/assets/logo.png" style="width: 85px; height:60px;">
 
-![Am I Responsive](docs/fitshare_responsive.jpg)
+![Am I Responsive](/workspace/fitshare/docs/readme/fitshare_home _page.png)
 
 **Mohamed Abdillahi**
 
@@ -91,11 +91,6 @@ Fitshare is a social fitness platform that allows users to connect, share, and d
 1. As an admin, I can manage user accounts to ensure a safe community (Must Have).
 2. As an admin, I can monitor posts and comments to maintain quality and appropriateness (Must Have).
 
-### **Kanban, Epics & User Stories**
-- Fitshare uses GitHub Kanban to manage user stories.
-- Epics are divided into functionality, posts, profiles, and comments.
-- The board statuses include "To Do," "In Progress," and "Done."
-
 ---
 
 ## **Design**
@@ -103,9 +98,9 @@ Fitshare is a social fitness platform that allows users to connect, share, and d
 ### **Colours**
 Fitshare’s color palette combines vibrant and neutral tones to create a dynamic and modern look. The colors aim to inspire energy and focus while keeping the design clean and accessible.
 
-<details><summary>Colour Palette</summary>
-<img src="docs/colour_palette.jpg" alt="Colour Palette">
-</details>
+
+
+
 
 ### **Fonts**
 The platform uses `Roboto` for its modern and clean aesthetics, ensuring readability across devices.
