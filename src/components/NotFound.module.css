@@ -1,5 +1,11 @@
 .NotFound {
-    margin-top: 25vh;
-    text-align: center;
-  }
-  
+  margin-top: 25vh;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #555555;
+}
+
+.NotFound span {
+  color: #1a8cff;
+  font-weight: bold;
+}

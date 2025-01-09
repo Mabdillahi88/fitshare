@@ -1,3 +1,5 @@
 .WordBreak {
-    word-break: break-all;
-  }
+  word-break: break-word; /* Updated for better text handling */
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
