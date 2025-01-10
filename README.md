@@ -168,3 +168,26 @@ FitShare uses **DM Sans** from Google Fonts for its clean and modern look, ideal
 - Node.js: 16.19.1
 - NPM: 8.19.3
 
+
+### Tools & Programs
+
+- [Am I Responsive](http://ami.responsivedesign.is/) - Showcased FitShare's seamless responsiveness across devices with a mock-up preview.
+- [Balsamiq](https://balsamiq.com/) - Used to create wireframes for planning the website layout and design.
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) - Debugged and fine-tuned the website for optimal responsiveness and performance.
+- [Cloudinary](https://cloudinary.com/) - Managed and served high-quality images and media assets efficiently.
+- [Colorzilla](https://www.colorzilla.com/) - Used to identify and create the color palette for the website.
+- [Favicon Generator](https://favicon.io/) - Designed a custom favicon for consistent branding across tabs.
+- [Font Awesome](https://fontawesome.com/) - Enhanced navigation and user interface with sleek and meaningful icons.
+- [Google Fonts](https://fonts.google.com/) - Incorporated "DM Sans" for a modern, clean, and fitness-friendly typography.
+- [Git](https://git-scm.com/) - Used for version control, enabling collaborative coding and error-free development.
+- [GitHub](https://github.com/) - Hosted the FitShare repository, facilitating remote collaboration and deployment.
+- [Gitpod](https://gitpod.io/) - Provided a robust development environment to streamline the coding and testing workflow.
+
+#### Validation Tools
+- [W3C HTML Validator](https://validator.w3.org/) - Ensured the HTML code adhered to web standards for functionality and compatibility.
+- [CSS Validator](https://jigsaw.w3.org/css-validator/) - Checked the CSS for clean syntax and compliance with best practices.
+- [ESLint](https://eslint.org/) - Enforced coding standards and identified potential issues in JavaScript and React code.
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/) - Evaluated and optimized performance, SEO, and accessibility metrics.
+- [Wave Accessibility Tool](https://wave.webaim.org/) - Ensured the website met accessibility standards for inclusive design.
+
+##### Back to [top](#table-of-contents)
