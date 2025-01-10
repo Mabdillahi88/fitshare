@@ -31,10 +31,6 @@
   object-fit: contain;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
   color: #ff4d4d; /* Vibrant red for links */
   transition: color 0.3s ease-in-out;
@@ -43,38 +39,4 @@ a {
 a:hover {
   text-decoration: none;
   color: #ffffff; /* Hover effect for links */
-}
-
-i {
-  color: #757575; /* Subtle gray for icons */
-  font-size: 1.6rem;
-  padding: 7px;
-}
-
-i:hover {
-  color: #ff4d4d; /* Highlighted red on hover */
-  cursor: pointer;
-}
-
-figure {
-  text-align: center;
-  display: inline-block;
-}
-
-/* Custom Scrollbar */
-*::-webkit-scrollbar {
-  width: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #292929; /* Match dark theme */
-}
-
-*::-webkit-scrollbar-thumb {
-  background: #ff4d4d; /* Bold red scroll thumb */
-  border-radius: 3px;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: #d32f2f; /* Darker red on hover */
 }
