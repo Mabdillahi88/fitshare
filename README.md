@@ -264,3 +264,347 @@ Visit the live FitShare API: [Live API](https://fitshareapi-b9588b2c11b9.herokua
 By leveraging Django REST Framework's flexibility and scalability, the FitShare API ensures secure, efficient, and real-time interaction between the front-end and back-end systems, bringing user stories to life.
 
 ##### Back to [top](#table-of-contents)
+
+
+## Features
+
+
+
+
+## Future Features / Improvements
+
+### Authentication
+- Introduce multi-factor authentication (MFA) to enhance account security and protect user data.
+- Add seamless social login integration (Google, Facebook, LinkedIn) to simplify the sign-up process.
+- Implement a robust "Forgot Password" system with email recovery and optional security questions.
+
+### Profile
+- Enable private messaging between users to foster a stronger sense of community and engagement.
+- Allow users to personalize their profiles with custom themes or background images for a unique look.
+- Add a progress tracker for fitness goals, including milestones, achievements, and workout streaks.
+
+### Posts
+- Expand post features to include short workout video uploads, inspiring others with visual content.
+- Introduce a leaderboard for "Most Liked Posts," spotlighting top creators and motivational stories.
+- Enable hashtag functionality to categorize posts, making it easier to discover content by topic (#CardioGoals, #Strength).
+
+### Comments
+- Enhance interaction by adding threaded replies for creating dynamic, flowing conversations.
+- Include a reaction system for comments, with emojis to express likes, laughter, or even motivation.
+- Add a "Pinned Comments" feature for post creators to highlight important or inspiring discussions.
+
+### General Enhancements
+- Introduce a sleek Dark Mode to create a gym-like ambiance and improve usability in low-light settings.
+- Build a FitShare mobile app with push notifications for likes, comments, and follower updates.
+- Add a feature-rich dashboard for users to track engagement, such as post views, likes, and profile visits.
+
+These ideas aim to transform FitShare into the ultimate fitness community hub—engaging, inspiring, and empowering users to reach their goals while connecting with others.
+
+##### Back to [top](#table-of-contents)
+
+
+## Validation 
+
+
+
+## Testing
+
+### Manual Testing of FitShare User Stories
+
+#### Authentication Backlog
+
+1. **As a user, I can create an account to access all features of the platform.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to `/signup`, fill in the username, password, and confirm password fields, then submit the form. | Account is created, and the user is redirected to the login page. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-01.png">
+</details>
+
+2. **As a user, I can log in and maintain my session until I log out.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to `/signin`, enter valid credentials, and submit the form. | User is authenticated and redirected to the home page with session maintained. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-02.png">
+</details>
+
+3. **As a user, I can log out to securely end my session.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click the logout button in the navbar. | User is logged out and redirected to the landing page as a guest. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-03.png">
+</details>
+
+4. **As a user, I can change my password to keep my account secure.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to `/profile`, click "Change Password", enter the new password, and save. | Password is updated, and the user receives a confirmation message. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04.png">
+</details>
+
+5. **As a user, I can update my username to reflect my identity.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------
+Navigate to the profile settings page and click on the "Edit Username" option. | The username field becomes editable. | Works as expected.
+Enter a new username and click "Save". | The username updates, and a confirmation message is displayed. | Works as expected.
+Log out and log back in using the new username. | The new username works for login, and changes are reflected across the app. | Works as expected.
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-05.png">
+</details>
+
+---
+
+#### Comments Backlog
+
+6. **As a user, I can add comments on posts to share my thoughts.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to a post, type a comment in the input box, and click "Add Comment". | Comment appears under the post. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-06.png">
+</details>
+
+7. **As a user, I can edit my comments to correct or update them.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click the edit button on an existing comment, update the text, and save. | The updated comment replaces the original with a confirmation message. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-07.png">
+</details>
+
+8. **As a user, I can delete my comments to remove unwanted content.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click the delete button on a comment. | The comment is removed, and a confirmation message appears. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-08.png">
+</details>
+
+9. **As a user, I can view all comments on a post to engage with the community.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to a post page. | Comments are displayed below the post. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-09.png">
+</details>
+
+---
+
+#### Posts Backlog
+
+10. **As a user, I can create posts with images and captions to share my gym experiences.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to `/create-post`, upload an image, add a caption, and submit the form. | Post appears on the home feed with the uploaded image and caption. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-10.png">
+</details>
+
+
+11. **As a user, I can edit my posts to update or correct information.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to an existing post, click the "Edit Post" button, make changes, and save. | Post updates with the new information and a confirmation message is displayed. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-11.png">
+</details>
+
+12. **As a user, I can delete my posts to remove unwanted content.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click the delete button on an existing post. | Post is removed from the feed, and a confirmation message appears. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-12.png">
+</details>
+
+13. **As a user, I can like or unlike a post to show my appreciation for the content.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click the "Like" button under a post. | The like icon toggles, and the like count updates dynamically. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-13.png">
+</details>
+
+14. **As a user, I can view all posts from other users, sorted by the latest, to discover new gyms and content.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to the main posts page. | Posts are displayed in descending order of creation time. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-14.png">
+</details>
+
+15. **As a user, I can search posts by keywords to find content relevant to my interests.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Use the search bar on the main posts page and input a keyword. | Posts containing the keyword in their title, description, or tags are displayed. | Works as expected. |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-stories-testing/user-story-15-a.png">
+<img src="docs/testing/user-stories-testing/user-story-15-b.png">
+</details>
+
+16. **As a user, I can view detailed information on individual posts, such as comments and likes.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on a post thumbnail from the main posts page. | Redirects to the post details page, displaying comments, like count, and user interactions. | Works as expected. |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-stories-testing/user-story-16-a.png">
+<img src="docs/testing/user-stories-testing/user-story-16-b.png">
+</details>
+
+17. **As a user, I can view all posts created by a specific user to follow their content.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to a user profile and view their posts section. | All posts by the user are displayed. | Works as expected. |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-stories-testing/user-story-17-a.png">
+<img src="docs/testing/user-stories-testing/user-story-17-b.png">
+</details>
+
+---
+
+#### Profile Backlog
+
+18. **As a user, I can view my profile to see my posts and account details.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to `/profile` to view your information and posts. | Profile information and posts are displayed. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-18.png">
+</details>
+
+19. **As a user, I can edit my profile information, including my bio and profile picture.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to the profile page, click "Edit Profile", update the bio and upload a new profile picture, then save. | Profile updates are saved, and a confirmation message is displayed. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-19.png">
+</details>
+
+20. **As a user, I can see statistics on my profile, such as the number of followers and posts.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to `/profile` and view the stats section. | Statistics such as the number of posts, followers, and following are displayed. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-20.png">
+</details>
+
+21. **As a user, I can follow or unfollow other users to customize my feed.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to a user profile and click the "Follow" or "Unfollow" button. | The button toggles, and the user is added or removed from the following list. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-21.png">
+</details>
+
+22. **As a user, I can view a list of the most popular profiles to discover new users to follow.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to `/popular-profiles`. | A list of popular profiles is displayed. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-22.png">
+</details>
+
+---
+
+#### Functionality Backlog
+
+23. **As a user, I can navigate the site using a navbar for easy access to all pages.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Load any page of the application. | Navbar with different links is displayed on top of each page. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-23.png">
+</details>
+
+24. **As a user, I can experience a fully responsive platform across all devices.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Access the site on devices with varying screen sizes or use browser developer tools. | Layout adjusts seamlessly for all screen sizes. | Works as expected. |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-24.png">
+</details>
+
+25. **As a user, I can see statistics on my profile, such as the number of followers and posts.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------
+Navigate to the profile page. | Profile statistics (e.g., number of followers, number of posts) are displayed. | Works as expected.
+Verify that the statistics update dynamically when posts are added or followers change. | The statistics update in real-time. | Works as expected.
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-25.png">
+</details>
+
+
+26. **As a user, I can see feedback messages for actions like posting, commenting, or editing to confirm successful operations.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Perform actions such as creating a post, adding a comment, or editing a profile. | Feedback messages appear, confirming successful operations. | Works as expected. |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-stories-testing/user-story-26-a.png">
+<img src="docs/testing/user-stories-testing/user-story-26-b.png">
+</details>
+
+27. **As a user, I can browse posts using infinite scrolling to avoid navigating through multiple pages.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Scroll to the bottom of the posts feed. | New posts load automatically without needing to navigate to another page. | Works as expected. |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-stories-testing/user-story-27-a.png">
+<img src="docs/testing/user-stories-testing/user-story-27-b.png">
+</details>
