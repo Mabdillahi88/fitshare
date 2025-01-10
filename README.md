@@ -103,3 +103,26 @@ FitShare is a dynamic social platform designed to connect fitness enthusiasts by
 25. As a user, I can see statistics on my profile, such as the number of followers and posts (Should have).
 26. As a user, I can follow or unfollow other users to customize my feed (Should have).
 27. As a user, I can view a list of the most popular profiles to discover new users to follow (Should have).
+
+
+## Design
+
+### Colours
+
+The colour scheme for FitShare was designed to convey the intensity and energy of fitness and boxing, while maintaining a modern and user-friendly aesthetic. The bold red (`#ff4d4d`) from the logo serves as the primary accent color, symbolizing strength and passion. It is complemented by a deep blue (`#2142b2`) for buttons, links, and borders, representing trust and professionalism. A light grey (`#f4f4f4`) background ensures high contrast and readability throughout the application, while subtle black and white shades (`#333333` and `#ffffff`) are used for text and containers to provide a clean, minimalist look.
+
+colour pallete
+<img src="docs/readme/colour_pallete.jpg">
+
+These colors were selected to:
+- Reflect the rugged, energetic vibe of fitness and boxing.
+- Provide excellent readability and user focus on content.
+- Ensure seamless contrast and accessibility for all users.
+
+### Implementation
+- **Primary Action Buttons**: Deep blue (`#2142b2`) with hover effects transitioning to a darker blue (`#1a337d`), emphasizing interactivity.
+- **Error and Warning Highlights**: Red (`#ff4d4d`) for icons like hearts (likes) and error messages, resonating with the boxing glove's dynamic color.
+- **Navigation Bar and Search Bar**: Light grey (`#ffffff`) with blue text and highlights for a professional appearance.
+- **Interactive Elements**: Gradients and hover effects are used to enhance the visual hierarchy and make buttons and icons more engaging.
+
+The chosen palette ensures the application remains visually striking, aligned with the branding of FitShare, while also offering a user-friendly experience.
