@@ -40,6 +40,30 @@ Fitshare is a social platform designed for fitness enthusiasts to connect, share
 
 ---
 
+## Project Goals
+
+FitShare is a dynamic social platform designed to connect fitness enthusiasts by enabling them to share their gym experiences, discover new workout spots, and build a supportive community. The project aims to:
+
+1. Provide a seamless platform for users to:
+   - Share their gym visits through posts, including images and captions.
+   - Engage with others by liking, commenting, and following profiles.
+
+2. Enhance user interaction by offering:
+   - The ability to create and manage user profiles.
+   - Real-time feedback notifications for actions like posting, commenting, and following.
+
+3. Deliver a superior user experience with:
+   - Intuitive navigation and responsive design across all devices.
+   - Features such as infinite scrolling, keyword search, and post filtering.
+
+4. Empower users to personalize their experience by:
+   - Viewing and editing their profiles and posts.
+   - Customizing their feed through follows, likes, and search options.
+
+5. Maintain high accessibility and reliability through:
+   - Comprehensive error handling, such as custom 404 pages.
+   - Secure authentication and user data management.
+
 
 ## User Stories
 
