@@ -1,57 +1,20 @@
 .Button {
-  font-size: 0.9rem;
+  font-size: 1rem;
   align-self: center;
-  border-radius: 50px;
-  border: none;
-  padding: 6px 15px;
+  border-radius: 5px;
+  border: 2px solid #ff4d4d;
+  padding: 8px 20px;
   margin: 0 5px;
-  min-width: 80px;
-  background-color: #2142b2;
+  background-color: #1e1e1e;
   color: #ffffff;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .Button:hover {
-  background-color: #1a337d;
-  cursor: pointer;
-  transform: scale(1.05);
+  background-color: #ff4d4d;
+  transform: scale(1.1);
 }
 
 .Button:active {
-  background-color: #102459;
-}
-
-.Wide {
-  padding: 10px 60px;
-  width: 100%;
-}
-
-.Blue,
-.BlueOutline:hover,
-.Bright:hover {
-  background-color: #1a8cff;
-  color: #ffffff;
-}
-
-.BlueOutline,
-.Blue:hover {
-  background-color: #ffffff;
-  color: #1a8cff;
-}
-
-.Black,
-.BlackOutline:hover {
-  background-color: #333333;
-  color: #ffffff;
-}
-
-.Black:hover,
-.BlackOutline {
-  background-color: #ffffff;
-  color: #333333;
-}
-
-.Bright {
-  background-color: #ffcc00;
-  color: #2142b2;
+  background-color: #d32f2f;
 }

@@ -1,18 +1,18 @@
 .NavBar {
-  background-color: #ffffff;
-  border-bottom: 2px solid #1a8cff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #1e1e1e;
+  border-bottom: 3px solid #ff4d4d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .NavLink {
   padding: 8px;
-  color: #2142b2;
+  color: #ffffff;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .NavLink:hover {
-  color: #1a8cff;
+  color: #ff4d4d;
 }
 
 .Active i {

@@ -2,10 +2,11 @@
   margin-top: 25vh;
   text-align: center;
   font-size: 1.5rem;
-  color: #555555;
+  color: #ffffff; /* Bright white text */
 }
 
 .NotFound span {
-  color: #1a8cff;
+  color: #ff4d4d; /* Highlighted red */
   font-weight: bold;
+  text-transform: uppercase; /* Bold, aggressive style for error messages */
 }

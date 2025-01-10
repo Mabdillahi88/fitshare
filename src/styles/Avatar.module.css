@@ -2,6 +2,6 @@
   border-radius: 50%;
   margin: 0 8px;
   object-fit: cover;
-  border: 3px solid #2142b2;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 3px solid #ff4d4d;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }

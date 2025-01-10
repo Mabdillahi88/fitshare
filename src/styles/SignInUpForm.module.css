@@ -1,19 +1,18 @@
 .Input {
-  background: #f8f9fd;
-  border: 1px solid #dde1ec;
+  background: #292929;
+  border: 2px solid #ff4d4d;
   border-radius: 5px;
   padding: 12px;
   font-size: 1rem;
-  text-align: center;
-  color: #333333;
+  color: #ffffff;
 }
 
 .Header {
   font-size: 18px;
   text-transform: uppercase;
-  color: #2142b2;
+  color: #ff4d4d;
 }
 
 .Link span {
-  color: #1a8cff;
+  color: #ff4d4d;
 }

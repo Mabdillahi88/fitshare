@@ -1,6 +1,7 @@
 .App {
   font-family: "DM Sans", sans-serif;
-  background-color: #f4f4f4;
+  background-color: #1e1e1e; /* Dark gym-like background */
+  color: #ffffff; /* White for readability */
   min-height: 100vh;
 }
 
@@ -9,11 +10,11 @@
 }
 
 .Content {
-  background-color: #ffffff;
+  background-color: #292929; /* Darker content area */
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ff4d4d; /* Red accent for borders */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .FillerImage {
@@ -21,6 +22,7 @@
   height: 100%;
   width: 100%;
   border-radius: 5px;
+  border: 2px solid #ff4d4d; /* Bold border for images */
 }
 
 .Image {
@@ -34,23 +36,23 @@
 }
 
 a {
-  color: #333333;
+  color: #ff4d4d; /* Vibrant red for links */
   transition: color 0.3s ease-in-out;
 }
 
 a:hover {
   text-decoration: none;
-  color: #1a8cff;
+  color: #ffffff; /* Hover effect for links */
 }
 
 i {
-  color: #b0b0b0;
+  color: #757575; /* Subtle gray for icons */
   font-size: 1.6rem;
   padding: 7px;
 }
 
 i:hover {
-  color: #2142b2;
+  color: #ff4d4d; /* Highlighted red on hover */
   cursor: pointer;
 }
 
@@ -61,18 +63,18 @@ figure {
 
 /* Custom Scrollbar */
 *::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #292929; /* Match dark theme */
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #ff4d4d; /* Bold red scroll thumb */
   border-radius: 3px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #d32f2f; /* Darker red on hover */
 }

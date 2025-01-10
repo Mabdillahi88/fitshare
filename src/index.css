@@ -5,14 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f4f4;
-  color: #333333;
+  background-color: #1e1e1e; /* Dark background */
+  color: #ffffff; /* Bright text for contrast */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  background-color: #f0f0f0;
-  padding: 2px 5px;
-  border-radius: 3px;
+  background-color: #292929; /* Darker code block background */
+  color: #ff4d4d; /* Red text for fitness vibe */
+  padding: 4px 6px;
+  border-radius: 5px;
 }
