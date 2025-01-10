@@ -191,3 +191,56 @@ FitShare uses **DM Sans** from Google Fonts for its clean and modern look, ideal
 - [Wave Accessibility Tool](https://wave.webaim.org/) - Ensured the website met accessibility standards for inclusive design.
 
 ##### Back to [top](#table-of-contents)
+
+
+## Front-End: FitShare
+
+**React**  
+FitShare is built using **React**, a powerful JavaScript library for creating dynamic and interactive user interfaces. React's flexibility and modular structure make it the perfect choice for developing scalable and maintainable applications like FitShare.
+
+### Why React?
+- **Speed**: React improves loading times by dynamically updating components without requiring full-page reloads, ensuring a smooth user experience.
+- **Flexibility**: React's modular structure allows for efficient code management and scalability.
+- **React Bootstrap**: This library provides pre-built components for styling and responsiveness, enhancing the overall user experience.
+- **Popularity**: React powers major platforms like Meta (Facebook), Instagram, and Netflix, proving its reliability for social and media applications.
+- **Component Reusability**: React components can be reused across the app, reducing redundancy and simplifying maintenance.
+
+---
+
+### Key Pages and Features
+FitShare's modular structure organizes its features into distinct groups:
+
+#### Authentication
+- **SignInForm.js**: Handles user login.
+- **SignUpForm.js**: Handles user registration.
+- **User Stories Covered**: 1, 2, 3.
+
+#### Comments
+- **Comment.js**: Displays user comments on posts.
+- **CommentCreateForm.js**: Allows users to add new comments.
+- **CommentEditForm.js**: Enables users to edit their comments.
+- **User Stories Covered**: 6, 7, 8, 9.
+
+#### Posts
+- **Post.js**: Displays individual posts with all associated details.
+- **PostCreateForm.js**: Handles the creation of new posts.
+- **PostEditForm.js**: Enables users to edit their posts.
+- **PostPage.js**: Shows detailed information about a single post.
+- **PostsPage.js**: Displays a feed of all posts.
+- **User Stories Covered**: 15, 16, 17, 18, 19, 20, 21, 22.
+
+#### Profiles
+- **PopularProfiles.js**: Displays trending profiles.
+- **Profile.js**: Handles individual user profiles.
+- **ProfileEditForm.js**: Allows users to update their profile information.
+- **ProfilePage.js**: Displays full profile pages.
+- **UsernameForm.js**: Enables username updates.
+- **UserPasswordForm.js**: Handles password changes.
+- **User Stories Covered**: 23, 24, 25, 26, 27.
+
+#### Utilities and Hooks
+- **utils.js**: Contains utility functions used throughout the app.
+- **useClickOutsideToggle.js**: Manages events for toggling components when clicking outside a specified element.
+- **useRedirect.js**: Handles logic for page redirections.
+
+This modular design ensures FitShare is easy to navigate, maintain, and scale.
