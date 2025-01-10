@@ -244,3 +244,23 @@ FitShare's modular structure organizes its features into distinct groups:
 - **useRedirect.js**: Handles logic for page redirections.
 
 This modular design ensures FitShare is easy to navigate, maintain, and scale.
+
+## Back-End API - FitShare API
+
+The FitShare application is powered by a robust back-end built using the Django REST Framework (DRF). This API handles all data and operations to provide a seamless experience for users. From user authentication to managing posts, comments, and profiles, the API serves as the backbone of FitShare.
+
+Explore the detailed documentation and repository for the DRF Back-End: [FitShare API Repository](https://github.com/Mabdillahi88/fitshare-api).
+
+### Key Features of the API:
+- **User Authentication**: Provides secure endpoints for user login, registration, and session management.
+- **Post Management**: Full CRUD functionality for creating, updating, deleting, and retrieving posts.
+- **Comment Functionality**: Allows users to add, edit, and delete comments on posts.
+- **Profile Control**: Enables users to view and edit profiles, manage passwords, and track followers.
+- **Search and Filtering**: Supports searching posts and filtering results by keywords, tags, or authors.
+- **Performance Optimizations**: Implements efficient serializers and query optimization for fast data responses.
+
+Visit the live FitShare API: [Live API](https://fitshareapi-b9588b2c11b9.herokuapp.com/).
+
+By leveraging Django REST Framework's flexibility and scalability, the FitShare API ensures secure, efficient, and real-time interaction between the front-end and back-end systems, bringing user stories to life.
+
+##### Back to [top](#table-of-contents)
