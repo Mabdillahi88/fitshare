@@ -131,3 +131,40 @@ The chosen palette ensures the application remains visually striking, aligned wi
 ### Fonts
 
 FitShare uses **DM Sans** from Google Fonts for its clean and modern look, ideal for a fitness-focused platform. It offers excellent readability with a slightly taller x-height and works well for both headers and body text. Paired with **sans-serif** as a fallback, DM Sans ensures a consistent and professional appearance across all devices.
+
+
+### Wireframes
+
+
+
+
+## Technologies Used
+
+### Languages
+- HTML
+- CSS
+- JavaScript
+  - React (17.0.2)
+
+### Libraries, Frameworks, and Dependencies
+- [React](https://reactjs.org/) - Core library for building the user interface of FitShare.
+- [React DOM](https://reactjs.org/docs/react-dom.html) - Provides DOM-specific methods for React.
+- [React Router DOM](https://v5.reactrouter.com/) - Enables dynamic routing to navigate between pages without reloading.
+- [Axios](https://axios-http.com/) - Used for promise-based HTTP requests to communicate with APIs.
+- [React-Bootstrap](https://react-bootstrap.github.io/) - Integrates Bootstrap's UI components seamlessly with React for responsive design.
+- [Bootstrap](https://getbootstrap.com/) - A CSS framework for building responsive and modern interfaces.
+- [React Icons](https://react-icons.github.io/react-icons/) - Provides a collection of popular icons for enhancing the UI.
+- [React Infinite Scroll Component](https://www.npmjs.com/package/react-infinite-scroll-component) - Implements infinite scrolling to load posts and comments dynamically.
+- [JWT Decode](https://github.com/auth0/jwt-decode) - Decodes JSON Web Tokens for managing authentication.
+- [MSW (Mock Service Worker)](https://mswjs.io/) - A testing tool for mocking API requests in development and testing environments.
+
+### Development Tools
+- [React Scripts](https://create-react-app.dev/docs/getting-started/) - Includes essential scripts for building, testing, and running the app.
+- [Web Vitals](https://web.dev/vitals/) - Used to measure and report performance metrics.
+- [Jest](https://jestjs.io/) - A testing framework for unit and integration tests.
+- [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - Simplifies testing React components to ensure they behave correctly.
+
+### Engines
+- Node.js: 16.19.1
+- NPM: 8.19.3
+
