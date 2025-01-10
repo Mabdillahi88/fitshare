@@ -126,3 +126,8 @@ These colors were selected to:
 - **Interactive Elements**: Gradients and hover effects are used to enhance the visual hierarchy and make buttons and icons more engaging.
 
 The chosen palette ensures the application remains visually striking, aligned with the branding of FitShare, while also offering a user-friendly experience.
+
+
+### Fonts
+
+FitShare uses **DM Sans** from Google Fonts for its clean and modern look, ideal for a fitness-focused platform. It offers excellent readability with a slightly taller x-height and works well for both headers and body text. Paired with **sans-serif** as a fallback, DM Sans ensures a consistent and professional appearance across all devices.
