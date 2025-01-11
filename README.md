@@ -644,5 +644,5 @@ Scroll to the bottom of the posts feed. | New posts load automatically without n
 
 <details><summary>Screenshots</summary>
 <img src="docs/testing/user-stories-testing/user-story-27.1.png">
-<img src="docs/testing/user-stories-testing/user-story-27.1.png">
+<img src="docs/testing/user-stories-testing/user-story-27.2.png">
 </details>
