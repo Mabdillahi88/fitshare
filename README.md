@@ -631,8 +631,9 @@ Verify that the statistics update dynamically when posts are added or followers 
 Perform actions such as creating a post, adding a comment, or editing a profile. | Feedback messages appear, confirming successful operations. | Works as expected. |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-26-a.png">
-<img src="docs/testing/user-stories-testing/user-story-26-b.png">
+<img src="docs/testing/user-stories-testing/user-story-26.1.png">
+<img src="docs/testing/user-stories-testing/user-story-26.1.png">
+<img src="docs/testing/user-stories-testing/user-story-26.3.png">
 </details>
 
 27. **As a user, I can browse posts using infinite scrolling to avoid navigating through multiple pages.**
@@ -642,6 +643,6 @@ Perform actions such as creating a post, adding a comment, or editing a profile.
 Scroll to the bottom of the posts feed. | New posts load automatically without needing to navigate to another page. | Works as expected. |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-27-a.png">
-<img src="docs/testing/user-stories-testing/user-story-27-b.png">
+<img src="docs/testing/user-stories-testing/user-story-27.1.png">
+<img src="docs/testing/user-stories-testing/user-story-27.1.png">
 </details>
