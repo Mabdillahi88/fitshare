@@ -759,3 +759,125 @@ The W3C Jigsaw CSS Validation Service confirmed all CSS modules are error-free.
 <details><summary>index.css</summary> 
 <img src="docs/validation/css-validation-index.png"> 
 </details> 
+
+## JSX Validation ✅
+
+The JSX code was validated using ESLint, confirming compliance and best practices.
+
+<details><summary>axiosDefaults.js</summary> 
+<img src="docs/validation/eslint-axiosDefaults.js.png"> 
+</details> 
+
+<details><summary>Asset.js</summary> 
+<img src="docs/validation/eslint-Asset.js.png"> 
+</details> 
+
+<details><summary>Avatar.js</summary> 
+<img src="docs/validation/eslint-Avatar.js.png"> 
+</details> 
+
+<details><summary>MoreDropdown.js</summary> 
+<img src="docs/validation/eslint-MoreDropdown.js.png"> 
+</details> 
+
+<details><summary>NavBar.js</summary> 
+<img src="docs/validation/eslint-NavBar.js.png"> 
+</details> 
+
+<details><summary>NotFound.js</summary> 
+<img src="docs/validation/eslint-NotFound.js.png"> 
+</details> 
+
+<details><summary>CurrentUserContext.js</summary> 
+<img src="docs/validation/eslint-CurrentUserContext.js.png"> 
+</details> 
+
+<details><summary>ProfileDataContext.js</summary> 
+<img src="docs/validation/eslint-ProfileDataContext.js.png"> 
+</details> 
+
+<details><summary>useClickOutsideToggle.js</summary> 
+<img src="docs/validation/eslint-useClickOutsideToggle.js.png"> 
+</details> 
+
+<details><summary>useRedirect.js</summary> 
+<img src="docs/validation/eslint-useRedirect.js.png"> 
+</details> 
+
+<details><summary>SignInForm.js</summary> 
+<img src="docs/validation/eslint-SignInForm.js.png"> 
+</details> 
+
+<details><summary>SignUpForm.js</summary> 
+<img src="docs/validation/eslint-SignUpForm.js.png"> 
+</details> 
+
+<details><summary>Comment.js</summary> 
+<img src="docs/validation/eslint-Comment.js.png"> 
+</details> 
+
+<details><summary>CommentCreateForm.js</summary> 
+<img src="docs/validation/eslint-CommentCreateForm.js.png"> 
+</details> 
+
+<details><summary>CommentEditForm.js</summary> 
+<img src="docs/validation/eslint-CommentEditForm.js.png"> 
+</details> 
+
+<details><summary>Post.js</summary> 
+<img src="docs/validation/eslint-Post.js.png"> 
+</details> 
+
+
+<details><summary>PostCreateForm.js</summary> 
+<img src="docs/validation/eslint-PostCreateForm.js.png"> 
+</details> 
+
+<details><summary>PostEditForm.js</summary> 
+<img src="docs/validation/eslint-PostEditForm.js.png"> 
+</details> 
+
+<details><summary>PostPage.js</summary> 
+<img src="docs/validation/eslint-PostPage.js.png"> 
+</details> 
+
+<details><summary>PostsPage.js</summary> 
+<img src="docs/validation/eslint-PostsPage.js.png"> 
+</details> 
+
+
+<details><summary>PopularProfiles.js</summary> 
+<img src="docs/validation/eslint-PopularProfiles.js.png"> 
+</details> 
+
+<details><summary>Profile.js</summary> 
+<img src="docs/validation/eslint-Profile.js.png"> 
+</details> 
+
+<details><summary>ProfileEditForm.js</summary> 
+<img src="docs/validation/eslint-ProfileEditForm.js.png"> 
+</details> 
+
+<details><summary>ProfilePage.js</summary> 
+<img src="docs/validation/eslint-ProfilePage.js.png"> 
+</details> 
+
+<details><summary>UsernameForm.js</summary> 
+<img src="docs/validation/eslint-UsernameForm.js.png"> 
+</details> 
+
+<details><summary>UserPasswordForm.js</summary> 
+<img src="docs/validation/eslint-UserPasswordForm.js.png"> 
+</details> 
+
+<details><summary>Landing.js</summary> 
+<img src="docs/validation/eslint-Landing.js.png"> 
+</details> 
+
+<details><summary>utils.js</summary> 
+<img src="docs/validation/eslint-utils.js.png"> 
+</details> 
+
+<details><summary>App.js</summary> 
+<img src="docs/validation/eslint-App.js.png"> 
+</details> 
