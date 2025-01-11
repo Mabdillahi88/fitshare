@@ -956,3 +956,18 @@ Testing was carried out on the following browsers:
 All functionalities, including navigation, media, and interactivity, worked seamlessly across all tested browsers.
 
 ##### Back to [top](#table-of-contents)
+
+
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+| Dropdown menu three dots going off the container on smaller screens | Changed `grid-template-columns: '60px auto 200px'` to `grid-template-columns: '60px auto 60px'` |
+| User was redirected to 404 page after signing up and logging in | Changed `history.goBack();` to `history.push("/")` |
+
+## Future Improvements
+
+| **Improvement** | **Details** |
+| --------------- | ----------- |
+| User analytics | Implement a feature to log user activity to analyze engagement and improve user experience. |
+| Improved mobile responsiveness | Enhance layout styles to ensure better responsiveness for smaller screens by adjusting `flex-direction` and padding. |
