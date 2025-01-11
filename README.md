@@ -881,3 +881,55 @@ The JSX code was validated using ESLint, confirming compliance and best practice
 <details><summary>App.js</summary> 
 <img src="docs/validation/eslint-App.js.png"> 
 </details> 
+
+
+### Wave
+
+The WAVE WebAIM tool was used to evaluate the accessibility of the FitShare website. However, each attempt to analyze the site returned the same image result, suggesting that WAVE was unable to access the hosted content.
+
+<details><summary>Landing page</summary>
+<img src="docs/validation/wave-landing-page.png">
+</details>
+
+<details><summary>Sign up page</summary>
+<img src="docs/validation/wave-sign-up.png">
+</details>
+
+<details><summary>Log in page</summary>
+<img src="docs/validation/wave-sign-in.png">
+</details>
+
+<details><summary>Main posts page</summary>
+<img src="docs/validation/wave-posts-page.png">
+</details>
+
+<details><summary>Post page</summary>
+<img src="docs/validation/wave-post-page.png">
+</details>
+
+<details><summary>Post create page</summary>
+<img src="docs/validation/wave-post-create-page.png">
+</details>
+
+<details><summary>Post edit page</summary>
+<img src="docs/validation/wave-post-edit-page.png">
+</details>
+
+<details><summary>Profile page</summary>
+<img src="docs/validation/wave-profile-page.png">
+</details>
+
+<details><summary>Profile edit page</summary>
+<img src="docs/validation/wave-profile-edit-page.png">
+</details>
+
+<details><summary>Password change page</summary>
+<img src="docs/validation/wave-password-change-page.png">
+</details>
+
+<details><summary>Password change page</summary>
+<img src="docs/validation/wave-username-change-page.png">
+</details>
+
+
+##### Back to [top](#table-of-contents)
