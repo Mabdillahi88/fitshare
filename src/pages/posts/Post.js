@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip, Alert } from "react-bootstrap";
@@ -29,6 +29,14 @@ const Post = (props) => {
   const history = useHistory();
   const [feedback, setFeedback] = useState(""); // Feedback state
 
+  // Clear feedback message after 3 seconds
+  useEffect(() => {
+    if (feedback) {
+      const timer = setTimeout(() => setFeedback(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [feedback]);
+
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
@@ -55,6 +63,7 @@ const Post = (props) => {
       }));
       setFeedback("Post liked successfully!");
     } catch (err) {
+      console.error("Error liking the post:", err);
       setFeedback("Failed to like post. Please try again.");
     }
   };
@@ -72,6 +81,7 @@ const Post = (props) => {
       }));
       setFeedback("Post unliked successfully!");
     } catch (err) {
+      console.error("Error unliking the post:", err);
       setFeedback("Failed to unlike post. Please try again.");
     }
   };
@@ -79,8 +89,13 @@ const Post = (props) => {
   return (
     <Card className={styles.Post}>
       <Card.Body>
+        {/* Feedback Message */}
         {feedback && (
-          <Alert variant={feedback.includes("success") ? "success" : "danger"}>
+          <Alert
+            variant={feedback.includes("success") ? "success" : "danger"}
+            onClose={() => setFeedback("")}
+            dismissible
+          >
             {feedback}
           </Alert>
         )}
