@@ -26,7 +26,14 @@ function App() {
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <Landing />} /> {/* Landing Page */}
+          {/* Redirect logged-in users to /feed if they access / */}
+          <Route
+            exact
+            path="/"
+            render={() =>
+              currentUser ? <Redirect to="/feed" /> : <Landing />
+            }
+          />
           <Route
             exact
             path="/feed"
