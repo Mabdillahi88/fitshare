@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Media, OverlayTrigger, Tooltip, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -27,6 +27,7 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+  const [feedback, setFeedback] = useState(""); // Feedback state
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
@@ -37,7 +38,7 @@ const Post = (props) => {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
     } catch (err) {
-    //  console.log(err);
+      console.error(err);
     }
   };
 
@@ -52,8 +53,9 @@ const Post = (props) => {
             : post;
         }),
       }));
+      setFeedback("Post liked successfully!");
     } catch (err) {
-   //   console.log(err);
+      setFeedback("Failed to like post. Please try again.");
     }
   };
 
@@ -68,14 +70,20 @@ const Post = (props) => {
             : post;
         }),
       }));
+      setFeedback("Post unliked successfully!");
     } catch (err) {
-  //    console.log(err);
+      setFeedback("Failed to unlike post. Please try again.");
     }
   };
 
   return (
     <Card className={styles.Post}>
       <Card.Body>
+        {feedback && (
+          <Alert variant={feedback.includes("success") ? "success" : "danger"}>
+            {feedback}
+          </Alert>
+        )}
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />

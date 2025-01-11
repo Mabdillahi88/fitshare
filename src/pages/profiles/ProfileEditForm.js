@@ -33,6 +33,7 @@ const ProfileEditForm = () => {
   const { name, content, image } = profileData;
 
   const [errors, setErrors] = useState({});
+  const [feedback, setFeedback] = useState(""); // Feedback state
 
   useEffect(() => {
     const handleMount = async () => {
@@ -42,7 +43,6 @@ const ProfileEditForm = () => {
           const { name, content, image } = data;
           setProfileData({ name, content, image });
         } catch (err) {
-      //    console.log(err);
           history.push("/");
         }
       } else {
@@ -76,9 +76,10 @@ const ProfileEditForm = () => {
         ...currentUser,
         profile_image: data.image,
       }));
-      history.goBack();
+      setFeedback("Profile updated successfully!");
+      setTimeout(() => history.goBack(), 2000); // Redirect after 2 seconds
     } catch (err) {
- //     console.log(err);
+      setFeedback("Failed to update profile. Please try again.");
       setErrors(err.response?.data);
     }
   };
@@ -118,6 +119,11 @@ const ProfileEditForm = () => {
       <Row>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
+            {feedback && (
+              <Alert variant={feedback.includes("success") ? "success" : "danger"}>
+                {feedback}
+              </Alert>
+            )}
             <Form.Group>
               {image && (
                 <figure>

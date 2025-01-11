@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Alert from "react-bootstrap/Alert";
 
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
@@ -11,6 +12,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
+  const [feedback, setFeedback] = useState(""); // Feedback state
 
   const handleChange = (event) => {
     setContent(event.target.value);
@@ -36,13 +38,15 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
+      setFeedback("Comment added successfully!");
     } catch (err) {
-     // console.log(err);
+      setFeedback("Failed to add comment. Please try again.");
     }
   };
 
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
+      {feedback && <Alert variant={feedback.includes("success") ? "success" : "danger"}>{feedback}</Alert>}
       <Form.Group>
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert";
 import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/CommentCreateEditForm.module.css";
@@ -9,6 +9,7 @@ function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;
 
   const [formContent, setFormContent] = useState(content);
+  const [feedback, setFeedback] = useState(""); // Feedback state
 
   const handleChange = (event) => {
     setFormContent(event.target.value);
@@ -32,14 +33,16 @@ function CommentEditForm(props) {
             : comment;
         }),
       }));
+      setFeedback("Comment edited successfully!");
       setShowEditForm(false);
     } catch (err) {
-     // console.log(err);
+      setFeedback("Failed to edit comment. Please try again.");
     }
   };
 
   return (
     <Form onSubmit={handleSubmit}>
+      {feedback && <Alert variant={feedback.includes("success") ? "success" : "danger"}>{feedback}</Alert>}
       <Form.Group className="pr-1">
         <Form.Control
           className={styles.Form}
@@ -59,7 +62,7 @@ function CommentEditForm(props) {
         </button>
         <button
           className={styles.Button}
-          disabled={!content.trim()}
+          disabled={!formContent.trim()}
           type="submit"
         >
           save

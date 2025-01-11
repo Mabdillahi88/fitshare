@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
+
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import CommentEditForm from "./CommentEditForm";
@@ -22,6 +24,7 @@ const Comment = (props) => {
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
+  const [feedback, setFeedback] = useState(""); // Feedback state
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
@@ -41,12 +44,16 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
-    } catch (err) {}
+      setFeedback("Comment deleted successfully!");
+    } catch (err) {
+      setFeedback("Failed to delete comment. Please try again.");
+    }
   };
 
   return (
     <>
       <hr />
+      {feedback && <Alert variant={feedback.includes("success") ? "success" : "danger"}>{feedback}</Alert>}
       <Media>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />

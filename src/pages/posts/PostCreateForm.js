@@ -1,28 +1,26 @@
 import React, { useRef, useState } from "react";
-
+import { useHistory } from "react-router";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
-
-import Asset from "../../components/Asset";
-
-import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-import { useHistory } from "react-router";
+import Asset from "../../components/Asset";
+import Upload from "../../assets/upload.png";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
+  const [feedback, setFeedback] = useState(""); // Feedback state
 
   const [postData, setPostData] = useState({
     title: "",
@@ -61,9 +59,10 @@ function PostCreateForm() {
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      setFeedback("Post created successfully!");
       history.push(`/posts/${data.id}`);
     } catch (err) {
-  //    console.log(err);
+      setFeedback("Failed to create post. Please try again.");
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
@@ -117,6 +116,7 @@ function PostCreateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
+      {feedback && <Alert variant={feedback.includes("success") ? "success" : "danger"}>{feedback}</Alert>}
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
