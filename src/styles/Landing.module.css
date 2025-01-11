@@ -1,0 +1,63 @@
+.LandingImage {
+    width: 100%;
+    max-height: 600px; /* Limit height for better aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ff4d4d; /* Add a bold red border for emphasis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  .LandingCard {
+    background-color: #292929; /* Dark background for contrast */
+    color: #ffffff; /* White text for readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+    text-align: center;
+  }
+  
+  .LandingButtonMargin {
+    margin-right: 10px;
+  }
+  
+  .Footer {
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .Footer a {
+    color: #ff4d4d; /* Red for actionable links */
+    margin-left: 15px;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+  }
+  
+  .Footer a:hover {
+    color: #ffffff; /* White on hover for better contrast */
+  }
+  
+  .Footer p {
+    margin: 0;
+  }
+  
+  .FooterIcons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .FooterIcons i {
+    font-size: 20px; /* Larger icons for visibility */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .FooterIcons i:hover {
+    transform: scale(1.2); /* Subtle scaling effect on hover */
+    color: #ffffff; /* Change to white on hover */
+  }
+  

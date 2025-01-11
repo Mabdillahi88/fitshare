@@ -14,7 +14,8 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-import NotFound from "./components/NotFound"; // Import the new NotFound component
+import NotFound from "./components/NotFound";
+import Landing from "./pages/Landing"; // Import Landing
 
 function App() {
   const currentUser = useCurrentUser();
@@ -25,13 +26,7 @@ function App() {
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <PostsPage message="No results found. Adjust the search keyword." />
-            )}
-          />
+          <Route exact path="/" render={() => <Landing />} />
           <Route
             exact
             path="/feed"
@@ -73,8 +68,6 @@ function App() {
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
           />
-          
-          {/* Replace the placeholder for Page Not Found */}
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
