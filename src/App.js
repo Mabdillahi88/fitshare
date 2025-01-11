@@ -1,7 +1,7 @@
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
@@ -15,7 +15,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
-import Landing from "./pages/Landing"; // Import Landing
+import Landing from "./pages/Landing"; // Import Landing Page
 
 function App() {
   const currentUser = useCurrentUser();
@@ -26,47 +26,73 @@ function App() {
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <Landing />} />
+          <Route exact path="/" render={() => <Landing />} /> {/* Landing Page */}
           <Route
             exact
             path="/feed"
-            render={() => (
-              <PostsPage
-                message="No results found. Adjust the search keyword or follow a user."
-                filter={`owner__followed__owner__profile=${profile_id}&`}
-              />
-            )}
+            render={() =>
+              currentUser ? (
+                <PostsPage
+                  message="No results found. Adjust the search keyword or follow a user."
+                  filter={`owner__followed__owner__profile=${profile_id}&`}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route
             exact
             path="/liked"
-            render={() => (
-              <PostsPage
-                message="No results found. Adjust the search keyword or like a post."
-                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-              />
-            )}
+            render={() =>
+              currentUser ? (
+                <PostsPage
+                  message="No results found. Adjust the search keyword or like a post."
+                  filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          <Route
+            exact
+            path="/posts/create"
+            render={() =>
+              currentUser ? <PostCreateForm /> : <Redirect to="/" />
+            }
+          />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
-          <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+          <Route
+            exact
+            path="/posts/:id/edit"
+            render={() =>
+              currentUser ? <PostEditForm /> : <Redirect to="/" />
+            }
+          />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route
             exact
             path="/profiles/:id/edit/username"
-            render={() => <UsernameForm />}
+            render={() =>
+              currentUser ? <UsernameForm /> : <Redirect to="/" />
+            }
           />
           <Route
             exact
             path="/profiles/:id/edit/password"
-            render={() => <UserPasswordForm />}
+            render={() =>
+              currentUser ? <UserPasswordForm /> : <Redirect to="/" />
+            }
           />
           <Route
             exact
             path="/profiles/:id/edit"
-            render={() => <ProfileEditForm />}
+            render={() =>
+              currentUser ? <ProfileEditForm /> : <Redirect to="/" />
+            }
           />
           <Route render={() => <NotFound />} />
         </Switch>
