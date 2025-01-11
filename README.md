@@ -971,3 +971,38 @@ All functionalities, including navigation, media, and interactivity, worked seam
 | --------------- | ----------- |
 | User analytics | Implement a feature to log user activity to analyze engagement and improve user experience. |
 | Improved mobile responsiveness | Enhance layout styles to ensure better responsiveness for smaller screens by adjusting `flex-direction` and padding. |
+
+
+## Config
+
+### Forking the GitHub Repository
+1. Go to the [FitShare GitHub repository](https://fitshare-d428ae7f1a9f.herokuapp.com/).
+2. Click on the **Fork** button in the top right corner.
+3. You will then have a copy of the repository in your own GitHub account.
+
+### Making a Local Clone
+1. Go to the [FitShare GitHub repository](https://fitshare-d428ae7f1a9f.herokuapp.com/).
+2. Locate the **Code** button above the list of files and click it.
+3. Highlight the **HTTPS** button to clone with HTTPS and copy the link.
+4. Open the command-line interface on your computer.
+5. Change the current working directory to the one where you want the cloned directory.
+6. Type `git clone` and paste the URL from the clipboard:
+   ```bash
+   $ git clone https://fitshare-d428ae7f1a9f.herokuapp.com/
+
+
+## Credits
+### Images
+
+All images used in this project were sourced from Google Images under free-use and no-copyright licensing. Every effort was made to ensure the images comply with free-use terms. These include images for the landing page, posts, and icons used across the site. If there are any issues with the usage of these images, please feel free to contact me for attribution or removal.
+
+### Code
+
+This project was heavily inspired by the ['Moments'](https://github.com/Code-Institute-Solutions/moments) social media platform, which was a final walk-through project with Code Institute. 
+
+### Acknowledgements
+
+First and foremost, my heartfelt gratitude goes to my wife, Filsan. Her unwavering patience, support, and understanding have been the backbone of this project. Balancing time between our young ones and this project was made feasible due to her continuous encouragement.
+
+I'd also like to extend a special thank you to my mentor, Mo Shami. His expertise, constructive feedback, and continuous guidance have been instrumental in shaping this project to what it is today.
+
