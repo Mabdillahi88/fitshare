@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -18,7 +17,6 @@ import { removeTokenTimestamp } from "../utils/utils";
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-  const history = useHistory();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
@@ -27,9 +25,8 @@ const NavBar = () => {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
       removeTokenTimestamp();
-      history.push("/"); // Redirect to landing page after logout
     } catch (err) {
-      console.error("Error logging out:", err);
+    //  console.log(err);
     }
   };
 

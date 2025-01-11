@@ -340,17 +340,25 @@ Navigate to `/signin`, enter valid credentials, and submit the form. | User is a
 Click the logout button in the navbar. | User is logged out and redirected to the landing page as a guest. | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-03.png">
+<img src="docs/testing/user-stories-testing/user-story-03.1.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-03.2.png">
 </details>
 
 4. **As a user, I can change my password to keep my account secure.**
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to `/profile`, click "Change Password", enter the new password, and save. | Password is updated, and the user receives a confirmation message. | Works as expected. |
+Navigate to `/profile`, click "Change Password", enter the new password, and save. | Password is updated | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04.png">
+<img src="docs/testing/user-stories-testing/user-story-04.1.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04.2.png">
 </details>
 
 5. **As a user, I can update my username to reflect my identity.**
@@ -362,10 +370,13 @@ Enter a new username and click "Save". | The username updates, and a confirmatio
 Log out and log back in using the new username. | The new username works for login, and changes are reflected across the app. | Works as expected.
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-05.png">
+<img src="docs/testing/user-stories-testing/user-story-05.1.png">
 </details>
 
----
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-05.2.png">
+</details>
+
 
 #### Comments Backlog
 
@@ -396,7 +407,11 @@ Click the edit button on an existing comment, update the text, and save. | The u
 Click the delete button on a comment. | The comment is removed, and a confirmation message appears. | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-08.png">
+<img src="docs/testing/user-stories-testing/user-story-08.1.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-08.2.png">
 </details>
 
 9. **As a user, I can view all comments on a post to engage with the community.**
@@ -409,20 +424,22 @@ Navigate to a post page. | Comments are displayed below the post. | Works as exp
 <img src="docs/testing/user-stories-testing/user-story-09.png">
 </details>
 
----
 
 #### Posts Backlog
 
-10. **As a user, I can create posts with images and captions to share my gym experiences.**
+10. **As a user, I can create posts with images to share my gym experiences.**
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to `/create-post`, upload an image, add a caption, and submit the form. | Post appears on the home feed with the uploaded image and caption. | Works as expected. |
+Navigate to `/create-post`, upload an image and submit the form. | Post appears on the home feed with the uploaded image. | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-10.png">
+<img src="docs/testing/user-stories-testing/user-story-10.1.png">
 </details>
 
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-10.2.png">
+</details>
 
 11. **As a user, I can edit my posts to update or correct information.**
 
@@ -431,7 +448,11 @@ Navigate to `/create-post`, upload an image, add a caption, and submit the form.
 Navigate to an existing post, click the "Edit Post" button, make changes, and save. | Post updates with the new information and a confirmation message is displayed. | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-11.png">
+<img src="docs/testing/user-stories-testing/user-story-11.1.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-11.2.png">
 </details>
 
 12. **As a user, I can delete my posts to remove unwanted content.**
@@ -451,10 +472,14 @@ Click the delete button on an existing post. | Post is removed from the feed, an
 Click the "Like" button under a post. | The like icon toggles, and the like count updates dynamically. | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-13.png">
+<img src="docs/testing/user-stories-testing/user-story-13.1.png">
 </details>
 
-14. **As a user, I can view all posts from other users, sorted by the latest, to discover new gyms and content.**
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-13.2.png">
+</details>
+
+14. **As a user, I can view all posts from other users to discover new gyms and content.**
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -471,8 +496,7 @@ Navigate to the main posts page. | Posts are displayed in descending order of cr
 Use the search bar on the main posts page and input a keyword. | Posts containing the keyword in their title, description, or tags are displayed. | Works as expected. |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-15-a.png">
-<img src="docs/testing/user-stories-testing/user-story-15-b.png">
+<img src="docs/testing/user-stories-testing/user-story-15.png">
 </details>
 
 16. **As a user, I can view detailed information on individual posts, such as comments and likes.**
@@ -482,8 +506,7 @@ Use the search bar on the main posts page and input a keyword. | Posts containin
 Click on a post thumbnail from the main posts page. | Redirects to the post details page, displaying comments, like count, and user interactions. | Works as expected. |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-16-a.png">
-<img src="docs/testing/user-stories-testing/user-story-16-b.png">
+<img src="docs/testing/user-stories-testing/user-story-16.png">
 </details>
 
 17. **As a user, I can view all posts created by a specific user to follow their content.**
@@ -493,11 +516,9 @@ Click on a post thumbnail from the main posts page. | Redirects to the post deta
 Navigate to a user profile and view their posts section. | All posts by the user are displayed. | Works as expected. |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-17-a.png">
-<img src="docs/testing/user-stories-testing/user-story-17-b.png">
+<img src="docs/testing/user-stories-testing/user-story-17.png">
 </details>
 
----
 
 #### Profile Backlog
 
@@ -538,7 +559,11 @@ Navigate to `/profile` and view the stats section. | Statistics such as the numb
 Navigate to a user profile and click the "Follow" or "Unfollow" button. | The button toggles, and the user is added or removed from the following list. | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-21.png">
+<img src="docs/testing/user-stories-testing/user-story-21.1.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-21.2.png">
 </details>
 
 22. **As a user, I can view a list of the most popular profiles to discover new users to follow.**
@@ -572,7 +597,15 @@ Load any page of the application. | Navbar with different links is displayed on 
 Access the site on devices with varying screen sizes or use browser developer tools. | Layout adjusts seamlessly for all screen sizes. | Works as expected. |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-24.png">
+<img src="docs/testing/user-stories-testing/user-story-24.1.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-24.2.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-24.3.png">
 </details>
 
 25. **As a user, I can see statistics on my profile, such as the number of followers and posts.**
@@ -583,7 +616,11 @@ Navigate to the profile page. | Profile statistics (e.g., number of followers, n
 Verify that the statistics update dynamically when posts are added or followers change. | The statistics update in real-time. | Works as expected.
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-25.png">
+<img src="docs/testing/user-stories-testing/user-story-25.1.png">
+</details>
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-25.2.png">
 </details>
 
 
