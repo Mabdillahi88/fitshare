@@ -933,3 +933,26 @@ The WAVE WebAIM tool was used to evaluate the accessibility of the FitShare webs
 
 
 ##### Back to [top](#table-of-contents)
+
+
+### Performing tests on various devices
+
+Performing Tests on Various Devices 📱💻
+
+FitShare was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate various devices. 
+The website was successfully tested on the following devices:
+
+1. ASUS ZenBook 
+2. Samsung Galaxy Tab A 
+3. Samsung Galaxy S7 
+Browser Compatibility 
+
+Testing was carried out on the following browsers:
+
+1. Google Chrome 
+2. Firefox Browser 
+3. Microsoft Edge 
+
+All functionalities, including navigation, media, and interactivity, worked seamlessly across all tested browsers.
+
+##### Back to [top](#table-of-contents)
