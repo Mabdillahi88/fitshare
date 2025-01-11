@@ -643,5 +643,51 @@ FitShare is just getting started! Here’s a sneak peek at the bold features and
 - 🏅 **Top Performers**: Introduce a leaderboard showcasing the most active, inspiring, or followed users on FitShare.
 
 
-## Validation 
+## Validation  
+
+## HTML Validation ✅
+
+The W3C Markup Validation Service confirmed the website’s HTML is error-free and fully compliant. 🚀
+
+
+<details><summary>Main page</summary> 
+<img src="docs/validation/html-validation-main-page.png"> 
+</details> 
+
+<details><summary>Signup page</summary> 
+<img src="docs/validation/html-validation-signup-page.png"> 
+</details>
+
+<details><summary>Login page</summary> 
+<img src="docs/validation/html-validation-signin-page.png"> 
+</details>
+
+<details><summary>Post page</summary>
+<img src="docs/validation/html-validation-post-page.png">
+</details>
+
+<details><summary>Post create page</summary>
+<img src="docs/validation/html-validation-post-create-page.png">
+</details>
+
+<details><summary>Post edit page</summary>
+<img src="docs/validation/html-validation-post-edit-page.png">
+</details>
+
+<details><summary>Profile page</summary>
+<img src="docs/validation/html-validation-profile-page.png">
+</details>
+
+<details><summary>Profile edit page</summary>
+<img src="docs/validation/html-validation-profile-edit-page.png">
+</details>
+
+<details><summary>Password change page</summary>
+<img src="docs/validation/html-validation-password-change-page.png">
+</details>
+
+<details><summary>Password change page</summary>
+<img src="docs/validation/html-validation-username-change-page.png">
+</details>
+
 
