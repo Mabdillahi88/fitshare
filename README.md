@@ -135,7 +135,17 @@ FitShare uses **DM Sans** from Google Fonts for its clean and modern look, ideal
 
 ### Wireframes
 
+<details><summary>desktop view</summary>
+<img src="docs/wireframes/wireframes-desktop_view.png">
+</details>
+<details><summary>mobile view</summary>
+<img src="docs/wireframes/wireframes-mobile_view.png">
+</details>
+<details><summary>ipad view</summary>
+<img src="docs/wireframes/wireframes-ipad_view.png">
+</details>
 
+##### Back to [top](#table-of-contents)
 
 
 ## Technologies Used
