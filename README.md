@@ -1014,5 +1014,5 @@ This project was heavily inspired by the ['Moments'](https://github.com/Code-Ins
 
 First and foremost, my heartfelt gratitude goes to my wife, Filsan. Her unwavering patience, support, and understanding have been the backbone of this project. Balancing time between our young ones and this project was made feasible due to her continuous encouragement.
 
-I'd also like to extend a special thank you to my mentor, Mo Shami. His expertise, constructive feedback, and continuous guidance have been instrumental in shaping this project to what it is today.
+I'd also like to extend a thank you to my mentor, Mo Shami. 
 
