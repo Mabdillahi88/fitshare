@@ -1,3 +1,4 @@
+// Import necessary dependencies and components
 import React, { useEffect, useState } from "react"; 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -18,14 +19,16 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext"; // Import useCurrentUser
 
+// Component to display a list of posts with search and infinite scroll
 function PostsPage({ message, filter = "" }) {
-  const [posts, setPosts] = useState({ results: [] });
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const { pathname } = useLocation();
-  const currentUser = useCurrentUser(); // Use the hook
+  const [posts, setPosts] = useState({ results: [] }); // State to store posts
+  const [hasLoaded, setHasLoaded] = useState(false); // State to track loading
+  const { pathname } = useLocation(); // Get the current path
+  const currentUser = useCurrentUser(); // Get the current logged-in user
 
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(""); // State for search query
 
+  // Fetch posts based on the filter, search query, and user status
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -33,24 +36,27 @@ function PostsPage({ message, filter = "" }) {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        // console.log(err);
+        console.error(err);
       }
     };
 
-    setHasLoaded(false);
+    setHasLoaded(false); // Set loading to false before fetching
     const timer = setTimeout(() => {
-      fetchPosts();
+      fetchPosts(); // Fetch posts after a delay for debounce effect
     }, 1000);
 
     return () => {
-      clearTimeout(timer);
+      clearTimeout(timer); // Clear the timer on cleanup
     };
-  }, [filter, query, pathname, currentUser]); // Add currentUser here
+  }, [filter, query, pathname, currentUser]); // Add dependencies
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Display popular profiles for mobile */}
         <PopularProfiles mobile />
+
+        {/* Search bar */}
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -65,6 +71,7 @@ function PostsPage({ message, filter = "" }) {
           />
         </Form>
 
+        {/* Display posts or loading spinner */}
         {hasLoaded ? (
           <>
             {posts.results.length ? (
@@ -79,16 +86,20 @@ function PostsPage({ message, filter = "" }) {
               />
             ) : (
               <Container className={appStyles.Content}>
+                {/* Display no results message */}
                 <Asset src={NoResults} message={message} />
               </Container>
             )}
           </>
         ) : (
           <Container className={appStyles.Content}>
+            {/* Display loading spinner */}
             <Asset spinner />
           </Container>
         )}
       </Col>
+
+      {/* Display popular profiles for desktop */}
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
       </Col>
