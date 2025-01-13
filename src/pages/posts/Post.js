@@ -1,3 +1,4 @@
+// Import required dependencies and components
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -7,29 +8,30 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 
+// Post component to display a single post with options for like, comment, and edit/delete
 const Post = (props) => {
   const {
-    id,
-    owner,
-    profile_id,
-    profile_image,
-    comments_count,
-    likes_count,
-    like_id,
-    title,
-    content,
-    image,
-    updated_at,
-    postPage,
-    setPosts,
+    id, // Post ID
+    owner, // Post owner username
+    profile_id, // Owner's profile ID
+    profile_image, // Owner's profile image
+    comments_count, // Number of comments on the post
+    likes_count, // Number of likes on the post
+    like_id, // ID of the like by the current user
+    title, // Post title
+    content, // Post content
+    image, // Post image
+    updated_at, // Post last updated date
+    postPage, // Indicates if this is a single post page
+    setPosts, // Function to update post state
   } = props;
 
-  const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === owner;
-  const history = useHistory();
-  const [feedback, setFeedback] = useState(""); // Feedback state
+  const currentUser = useCurrentUser(); // Current logged-in user
+  const is_owner = currentUser?.username === owner; // Check if the current user owns the post
+  const history = useHistory(); // History for navigation
+  const [feedback, setFeedback] = useState(""); // Feedback message state
 
-  // Clear feedback message after 3 seconds
+  // Automatically clear feedback messages after 3 seconds
   useEffect(() => {
     if (feedback) {
       const timer = setTimeout(() => setFeedback(""), 3000);
@@ -37,10 +39,12 @@ const Post = (props) => {
     }
   }, [feedback]);
 
+  // Navigate to the post edit page
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
 
+  // Handle post deletion
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
@@ -50,16 +54,17 @@ const Post = (props) => {
     }
   };
 
+  // Handle liking the post
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
       setPosts((prevPosts) => ({
         ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
+        results: prevPosts.results.map((post) =>
+          post.id === id
             ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-            : post;
-        }),
+            : post
+        ),
       }));
       setFeedback("Post liked successfully!");
     } catch (err) {
@@ -68,16 +73,17 @@ const Post = (props) => {
     }
   };
 
+  // Handle unliking the post
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
       setPosts((prevPosts) => ({
         ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
+        results: prevPosts.results.map((post) =>
+          post.id === id
             ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-            : post;
-        }),
+            : post
+        ),
       }));
       setFeedback("Post unliked successfully!");
     } catch (err) {
@@ -89,7 +95,7 @@ const Post = (props) => {
   return (
     <Card className={styles.Post}>
       <Card.Body>
-        {/* Feedback Message */}
+        {/* Display feedback message */}
         {feedback && (
           <Alert
             variant={feedback.includes("success") ? "success" : "danger"}
@@ -100,12 +106,14 @@ const Post = (props) => {
           </Alert>
         )}
         <Media className="align-items-center justify-content-between">
+          {/* Display post owner's avatar and username */}
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
+            {/* Show edit/delete options for the post owner */}
             {is_owner && postPage && (
               <MoreDropdown
                 handleEdit={handleEdit}
@@ -115,13 +123,16 @@ const Post = (props) => {
           </div>
         </Media>
       </Card.Body>
+      {/* Display post image */}
       <Link to={`/posts/${id}`}>
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
+        {/* Display post title and content */}
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.PostBar}>
+          {/* Display like/unlike buttons */}
           {is_owner ? (
             <OverlayTrigger
               placement="top"
@@ -146,6 +157,7 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
+          {/* Display comment icon with count */}
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
           </Link>

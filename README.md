@@ -197,7 +197,6 @@ FitShare uses **DM Sans** from Google Fonts for its clean and modern look, ideal
 - [W3C HTML Validator](https://validator.w3.org/) - Ensured the HTML code adhered to web standards for functionality and compatibility.
 - [CSS Validator](https://jigsaw.w3.org/css-validator/) - Checked the CSS for clean syntax and compliance with best practices.
 - [ESLint](https://eslint.org/) - Enforced coding standards and identified potential issues in JavaScript and React code.
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/) - Evaluated and optimized performance, SEO, and accessibility metrics.
 - [Wave Accessibility Tool](https://wave.webaim.org/) - Ensured the website met accessibility standards for inclusive design.
 
 ##### Back to [top](#table-of-contents)

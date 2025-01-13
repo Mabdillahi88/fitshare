@@ -1,3 +1,4 @@
+// Import required dependencies and components
 import React, { useRef, useState } from "react";
 import { useHistory } from "react-router";
 import Form from "react-bootstrap/Form";
@@ -17,21 +18,23 @@ import Upload from "../../assets/upload.png";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
+// Component to create a new post
 function PostCreateForm() {
-  useRedirect("loggedOut");
-  const [errors, setErrors] = useState({});
+  useRedirect("loggedOut"); // Redirect if user is not logged in
+  const [errors, setErrors] = useState({}); // State for validation errors
   const [feedback, setFeedback] = useState(""); // Feedback state
 
   const [postData, setPostData] = useState({
-    title: "",
-    content: "",
-    image: "",
+    title: "", // Post title
+    content: "", // Post content
+    image: "", // Post image
   });
   const { title, content, image } = postData;
 
-  const imageInput = useRef(null);
-  const history = useHistory();
+  const imageInput = useRef(null); // Reference for the image input
+  const history = useHistory(); // History for navigation
 
+  // Handle text input changes
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -39,6 +42,7 @@ function PostCreateForm() {
     });
   };
 
+  // Handle image upload and preview
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -49,6 +53,7 @@ function PostCreateForm() {
     }
   };
 
+  // Handle form submission to create a post
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -69,6 +74,7 @@ function PostCreateForm() {
     }
   };
 
+  // Text fields for post title and content
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -116,12 +122,18 @@ function PostCreateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      {feedback && <Alert variant={feedback.includes("success") ? "success" : "danger"}>{feedback}</Alert>}
+      {/* Feedback message */}
+      {feedback && (
+        <Alert variant={feedback.includes("success") ? "success" : "danger"}>
+          {feedback}
+        </Alert>
+      )}
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
+            {/* Image upload and preview */}
             <Form.Group className="text-center">
               {image ? (
                 <>

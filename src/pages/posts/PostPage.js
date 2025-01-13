@@ -1,3 +1,4 @@
+// Import necessary dependencies and components
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
@@ -17,25 +18,27 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 
+// Component to display a single post with its comments
 function PostPage() {
-  const { id } = useParams();
-  const [post, setPost] = useState({ results: [] });
+  const { id } = useParams(); // Get post ID from the URL parameters
+  const [post, setPost] = useState({ results: [] }); // State for the post data
 
-  const currentUser = useCurrentUser();
-  const profile_image = currentUser?.profile_image;
-  const [comments, setComments] = useState({ results: [] });
+  const currentUser = useCurrentUser(); // Current logged-in user
+  const profile_image = currentUser?.profile_image; // Profile image of the current user
+  const [comments, setComments] = useState({ results: [] }); // State for the comments
 
+  // Fetch post and comments data on mount
   useEffect(() => {
     const handleMount = async () => {
       try {
         const [{ data: post }, { data: comments }] = await Promise.all([
-          axiosReq.get(`/posts/${id}`),
-          axiosReq.get(`/comments/?post=${id}`),
+          axiosReq.get(`/posts/${id}`), // Fetch post data
+          axiosReq.get(`/comments/?post=${id}`), // Fetch comments for the post
         ]);
         setPost({ results: [post] });
         setComments(comments);
       } catch (err) {
-    //    console.log(err);
+        console.error(err);
       }
     };
 
@@ -45,9 +48,14 @@ function PostPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Placeholder for popular profiles (mobile view) */}
         <p>Popular profiles for mobile</p>
+
+        {/* Display the post */}
         <Post {...post.results[0]} setPosts={setPost} postPage />
+
         <Container className={appStyles.Content}>
+          {/* Display the comment form if user is logged in */}
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
@@ -59,6 +67,8 @@ function PostPage() {
           ) : comments.results.length ? (
             "Comments"
           ) : null}
+
+          {/* Display comments or a placeholder message */}
           {comments.results.length ? (
             <InfiniteScroll
               children={comments.results.map((comment) => (
@@ -81,6 +91,8 @@ function PostPage() {
           )}
         </Container>
       </Col>
+
+      {/* Placeholder for popular profiles (desktop view) */}
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         Popular profiles for desktop
       </Col>

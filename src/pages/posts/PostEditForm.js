@@ -1,4 +1,6 @@
+// Import required dependencies and components
 import React, { useEffect, useRef, useState } from "react";
+import { useHistory, useParams } from "react-router";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -12,23 +14,24 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
+// Component for editing an existing post
 function PostEditForm() {
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({}); // State for validation errors
 
   const [postData, setPostData] = useState({
-    title: "",
-    content: "",
-    image: "",
+    title: "", // Post title
+    content: "", // Post content
+    image: "", // Post image
   });
   const { title, content, image } = postData;
 
-  const imageInput = useRef(null);
-  const history = useHistory();
-  const { id } = useParams();
+  const imageInput = useRef(null); // Reference for the image input
+  const history = useHistory(); // History for navigation
+  const { id } = useParams(); // Get post ID from URL parameters
 
+  // Fetch the post data on component mount
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -37,13 +40,14 @@ function PostEditForm() {
 
         is_owner ? setPostData({ title, content, image }) : history.push("/");
       } catch (err) {
-    //    console.log(err);
+        console.error(err);
       }
     };
 
     handleMount();
   }, [history, id]);
 
+  // Handle text input changes
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -51,6 +55,7 @@ function PostEditForm() {
     });
   };
 
+  // Handle image upload and preview
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -61,6 +66,7 @@ function PostEditForm() {
     }
   };
 
+  // Handle form submission to save changes
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -76,13 +82,14 @@ function PostEditForm() {
       await axiosReq.put(`/posts/${id}/`, formData);
       history.push(`/posts/${id}`);
     } catch (err) {
-   //   console.log(err);
+      console.error(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
     }
   };
 
+  // Render text fields for post title and content
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -135,6 +142,7 @@ function PostEditForm() {
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
+            {/* Image upload and preview */}
             <Form.Group className="text-center">
               <figure>
                 <Image className={appStyles.Image} src={image} rounded />
