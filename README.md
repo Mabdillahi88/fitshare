@@ -2,7 +2,7 @@
 
 ![Mockup image](docs/readme/fitshare_home%20_page.jpg)
 
-**Mohamed Abdillahi**
+** Mr Mohamed Abdillahi**
 
 [Visit live website](https://fitshare-d428ae7f1a9f.herokuapp.com/)  
 
