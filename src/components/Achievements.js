@@ -12,7 +12,10 @@ const Achievements = () => {
 
   const fetchAchievements = async () => {
     try {
-      const response = await fetch('/api/achievements/');
+      // Use the full backend URL with the simplified route
+      const response = await fetch('https://fitshareapi-b9588b2c11b9.herokuapp.com/achievements/', {
+        credentials: 'include', // include credentials if authentication is required
+      });
       if (!response.ok) {
         throw new Error('Failed to fetch achievements');
       }
