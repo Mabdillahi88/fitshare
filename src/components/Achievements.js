@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Achievements.css';
 
 const Achievements = () => {
   const [achievements, setAchievements] = useState([]);
@@ -33,14 +34,14 @@ const Achievements = () => {
   }
 
   return (
-    <div>
+    <div className="achievements-container">
       <h2>Your Achievements</h2>
       {achievements.length === 0 ? (
         <p>No achievements earned yet.</p>
       ) : (
         <ul>
           {achievements.map((achievement) => (
-            <li key={achievement.id}>
+            <li key={achievement.id} className="achievement-item">
               <h3>{achievement.title}</h3>
               <p>{achievement.description}</p>
               <p>
