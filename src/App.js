@@ -15,7 +15,8 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
-import Landing from "./pages/Landing"; // Import Landing Page
+import Landing from "./pages/Landing";
+import Achievements from "./components/Achievements"; // Import the Achievements component
 
 function App() {
   const currentUser = useCurrentUser();
@@ -99,6 +100,14 @@ function App() {
             path="/profiles/:id/edit"
             render={() =>
               currentUser ? <ProfileEditForm /> : <Redirect to="/" />
+            }
+          />
+          {/* New route for Achievements */}
+          <Route
+            exact
+            path="/achievements"
+            render={() =>
+              currentUser ? <Achievements /> : <Redirect to="/signin" />
             }
           />
           <Route render={() => <NotFound />} />
