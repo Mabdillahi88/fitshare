@@ -16,7 +16,8 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
 import Landing from "./pages/Landing";
-import Achievements from "./components/Achievements"; // Import the Achievements component
+import Achievements from "./components/Achievements";
+import Notifications from "./components/Notifications"; // Import Notifications component
 
 function App() {
   const currentUser = useCurrentUser();
@@ -108,6 +109,14 @@ function App() {
             path="/achievements"
             render={() =>
               currentUser ? <Achievements /> : <Redirect to="/signin" />
+            }
+          />
+          {/* New route for Notifications */}
+          <Route
+            exact
+            path="/notifications"
+            render={() =>
+              currentUser ? <Notifications /> : <Redirect to="/signin" />
             }
           />
           <Route render={() => <NotFound />} />
