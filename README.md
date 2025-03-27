@@ -810,6 +810,11 @@ The W3C Jigsaw CSS Validation Service confirmed all CSS modules are error-free.
 <img src="docs/validation/css-validation-index.png"> 
 </details> 
 
+<details><summary>Achievements.css</summary> 
+<img src="docs/validation/css-validation-achievement.png" alt="CSS validation for Achievements.css">
+</details>
+
+
 ## JSX Validation ✅
 
 The JSX code was validated using ESLint, confirming compliance and best practices.
@@ -932,6 +937,9 @@ The JSX code was validated using ESLint, confirming compliance and best practice
 <img src="docs/validation/eslint-App.js.png"> 
 </details> 
 
+<details><summary>Achievements.js</summary> 
+<img src="docs/validation/eslint-Achievement.js.png" alt="ESLint validation for Achievements.js">
+</details>
 
 ### Wave
 
@@ -981,6 +989,9 @@ The WAVE WebAIM tool was used to evaluate the accessibility of the FitShare webs
 <img src="docs/validation/wave-username-change-page.png">
 </details>
 
+<details><summary>Achievement</summary>
+<img src="docs/validation/wave-achievements.png">
+</details>
 
 ##### Back to [top](#table-of-contents)
 
@@ -1021,6 +1032,78 @@ All functionalities, including navigation, media, and interactivity, worked seam
 | --------------- | ----------- |
 | User analytics | Implement a feature to log user activity to analyze engagement and improve user experience. |
 | Improved mobile responsiveness | Enhance layout styles to ensure better responsiveness for smaller screens by adjusting `flex-direction` and padding. |
+
+
+## Deployment
+
+This section provides a detailed, step-by-step guide for deploying the FitShare frontend on Heroku.
+
+### Local Setup
+
+#### Fork & Clone the Repository
+
+1. **Fork the Repository:**  
+   Visit the [FitShare GitHub repository](https://github.com/Mabdillahi88/fitshare) and click the **Fork** button in the top-right corner to create your own copy.
+
+2. **Clone Your Fork:**  
+   In your terminal, run:
+   ```bash
+   git clone https://github.com/Mabdillahi88/fitshare.git
+   cd fitshare
+
+#### Install Dependencies
+
+1. **Install the Required Dependencies:**  
+   In the cloned repository's directory, run:
+   ```bash
+   npm install
+
+#### Running the Application Locally
+
+**Start the Development Server:**  
+To test your application locally, run:
+```bash
+npm start
+ 
+ The application will be available at [http://localhost:3000](http://localhost:3000).
+
+### Deploying to Heroku
+
+#### Create a New Heroku App
+
+**Log in to Heroku:**  
+Open your terminal and log in by running:
+```bash
+heroku login
+
+**Create the App:**  
+Create a new Heroku app (for example, `fitshare-d428ae7f1a9f`) by running:
+```bash
+heroku create fitshare-d428ae7f1a9f
+
+**Create a Production Build:**  
+Build the Production Version:  
+Run the following command to create an optimized production build:
+```bash
+npm run build
+
+**Deploy Your Code:**
+
+1. **Commit Your Changes:**  
+   Ensure all changes are committed:
+   ```bash
+   git add .
+   git commit -m "Prepare frontend for deployment on Heroku"
+ 
+ **Set Heroku as Your Remote:**  
+Link your local repository to the Heroku app:
+```bash
+heroku git:remote -a fitshare-d428ae7f1a9f
+
+**Verify Deployment:**
+
+- **Check the Live Site:**  
+  Visit [https://fitshare-d428ae7f1a9f.herokuapp.com/](https://fitshare-d428ae7f1a9f.herokuapp.com/) in your browser to confirm that the frontend is live.
 
 
 ## Config
