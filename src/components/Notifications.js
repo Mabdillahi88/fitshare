@@ -10,14 +10,26 @@ const Notifications = () => {
     const fetchNotifications = async () => {
       try {
         const response = await fetch('https://fitshareapi-b9588b2c11b9.herokuapp.com/notifications/', {
-          credentials: 'include', // use if your API requires authentication
+          credentials: 'include', // include credentials if authentication is needed
         });
         if (!response.ok) {
-          throw new Error('Failed to fetch notifications');
+          throw new Error(`Failed to fetch notifications: ${response.statusText}`);
         }
         const data = await response.json();
-        setNotifications(data);
+        console.log("Fetched notifications:", data);
+        // If data is an object with a 'results' key (e.g., paginated), use it; otherwise, assume it's an array.
+        let notificationsArray = [];
+        if (Array.isArray(data)) {
+          notificationsArray = data;
+        } else if (data.results && Array.isArray(data.results)) {
+          notificationsArray = data.results;
+        } else {
+          // Fallback: log the unexpected data format and set as empty array
+          console.error("Unexpected data format for notifications:", data);
+        }
+        setNotifications(notificationsArray);
       } catch (err) {
+        console.error("Error fetching notifications:", err);
         setError(err.message);
       } finally {
         setLoading(false);
