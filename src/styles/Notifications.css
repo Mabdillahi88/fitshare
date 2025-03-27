@@ -1,31 +1,48 @@
+/* src/styles/Notifications.css */
+
 .notifications-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #fff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 1000;
+    padding: 20px;
+    background-color: #f9f9f9;
   }
   
   .notifications-container h2 {
-    margin-top: 0;
-    font-size: 1.2rem;
+    color: #1a8cff;
+    margin-bottom: 15px;
+    font-size: 1.8em;
   }
   
-  .notifications-container ul {
-    list-style: none;
-    padding: 0;
+  /* Notification item styling */
+  .notification-item {
+    background-color: #fff;
+    border: 2px solid #1a8cff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification-item h3 {
+    margin: 0 0 8px;
+    font-size: 1.4em;
+    color: #1a8cff;
+  }
+  
+  .notification-item p {
     margin: 0;
+    font-size: 1em;
+    color: #333;
   }
   
-  .notifications-container li {
-    margin-bottom: 10px;
+  .notification-item small {
+    display: block;
+    margin-top: 8px;
+    color: #555;
   }
   
-  .notifications-container li p {
-    margin: 0;
+  /* Responsive adjustments */
+  @media screen and (max-width: 991px) {
+    .notification-item {
+      padding: 20px;
+    }
   }
   
