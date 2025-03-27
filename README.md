@@ -108,6 +108,9 @@ FitShare is a dynamic social platform designed to connect fitness enthusiasts by
 28. As a user, I can view my earned achievements so that I can track my progress and be motivated by visual rewards (badges) for my fitness activities (Must have).
 
 
+### Notifications Backlog
+29. As a user, I can view notifications so that I know when other users interact with my content (e.g., likes, comments, follows), ensuring I receive timely feedback on my posts (Must have).
+
 
 ## Design
 
