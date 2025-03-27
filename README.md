@@ -283,8 +283,10 @@ Explore the detailed documentation and repository for the DRF Back-End: [FitShar
 - **Comment Functionality**: Allows users to add, edit, and delete comments on posts.
 - **Profile Control**: Enables users to view and edit profiles, manage passwords, and track followers.
 - **Achievements**: Automatically tracks and awards user achievements (e.g., "Newbie", "Popular Post", "Comment Champion") based on user activity.
+- **Notifications**: Provides endpoints to monitor and manage user notifications, ensuring users receive timely feedback on interactions such as likes, comments, and follows.
 - **Search and Filtering**: Supports searching posts and filtering results by keywords, tags, or authors.
 - **Performance Optimizations**: Implements efficient serializers and query optimization for fast data responses.
+
 
 
 Visit the live FitShare API: [Live API](https://fitshareapi-b9588b2c11b9.herokuapp.com/).
