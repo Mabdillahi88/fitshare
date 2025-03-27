@@ -63,6 +63,14 @@ const NavBar = () => {
       >
         <i className="fas fa-trophy"></i>Achievements
       </NavLink>
+      {/* New Notifications Link */}
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/notifications"
+      >
+        <i className="fas fa-bell"></i>Notifications
+      </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
