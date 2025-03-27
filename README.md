@@ -666,6 +666,13 @@ Post 2 or more comments. | The user should receive the "Comment Champion" achiev
 <img src="docs/testing/user-stories-testing/achievement-create-comment_champion_3.2.png" alt="Comment Champion achievement screenshot">
 </details>
 
+<details><summary><strong>Screenshots: Notifications</strong></summary>
+  <details><summary>Notification for Follow, Like and Comment </summary>
+    <img src="docs/testing/user-stories-testing/notification1.1.png" alt="Notification for follow screenshot">
+  </details>
+</details>
+
+
 
 ## Future Features / Improvements 🚀
 
