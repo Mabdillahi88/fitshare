@@ -251,12 +251,17 @@ FitShare's modular structure organizes its features into distinct groups:
 - **UserPasswordForm.js**: Handles password changes.
 - **User Stories Covered**: 23, 24, 25, 26, 27.
 
+#### Achievements
+- **Achievements.js**: Displays the achievements earned by the user by fetching data from the backend API. This component shows rewards such as "Newbie", "Popular Post", and "Comment Champion".
+- **User Stories Covered**: 28.
+
 #### Utilities and Hooks
 - **utils.js**: Contains utility functions used throughout the app.
 - **useClickOutsideToggle.js**: Manages events for toggling components when clicking outside a specified element.
 - **useRedirect.js**: Handles logic for page redirections.
 
 This modular design ensures FitShare is easy to navigate, maintain, and scale.
+
 
 ## Back-End API - FitShare API
 
