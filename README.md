@@ -627,6 +627,36 @@ Scroll to the bottom of the posts feed. | New posts load automatically without n
 </details>
 
 
+28. **As a user, I can view my earned achievements so that I can track my progress and be motivated by visual rewards (badges) for my fitness activities.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------
+Create a new user account and publish the first post. | The user should automatically receive the "Newbie" achievement. | Works as expected.
+Add at least 1 like or 1 comment to a post. | The post owner should receive the "Popular Post" achievement. | Works as expected.
+Post 2 or more comments. | The user should receive the "Comment Champion" achievement. | Works as expected.
+
+<details><summary>Screenshot: Newbie Achievement</summary>
+<img src="docs/testing/user-stories-testing/achievement-create-newbie_1.1.png" alt="Newbie achievement screenshot">
+</details>
+<details><summary>Screenshot: Newbie Achievement</summary>
+<img src="docs/testing/user-stories-testing/achievement-create-newbie_1.2.png" alt="Newbie achievement screenshot">
+</details>
+
+<details><summary>Screenshot: Popular Post Achievement</summary>
+<img src="docs/testing/user-stories-testing/achievement-create-popular_2.1.png" alt="Popular Post achievement via likes screenshot">
+</details>
+<details><summary>Screenshot: Popular Post Achievement</summary>
+<img src="docs/testing/user-stories-testing/achievement-create-popular_2.2.png" alt="Popular Post achievement via likes screenshot">
+</details>
+
+<details><summary>Screenshot: Comment Champion Achievement</summary>
+<img src="docs/testing/user-stories-testing/achievement-create-comment_champion_3.1.png" alt="Comment Champion achievement screenshot">
+</details>
+<details><summary>Screenshot: Comment Champion Achievement</summary>
+<img src="docs/testing/user-stories-testing/achievement-create-comment_champion_3.2.png" alt="Comment Champion achievement screenshot">
+</details>
+
+
 ## Future Features / Improvements 🚀
 
 FitShare is just getting started! Here’s a sneak peek at the bold features and upgrades that could take this platform to the next level:
