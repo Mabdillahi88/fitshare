@@ -831,6 +831,10 @@ The W3C Jigsaw CSS Validation Service confirmed all CSS modules are error-free.
 <img src="docs/validation/css-validation-achievement.png" alt="CSS validation for Achievements.css">
 </details>
 
+<details><summary>Notification.css</summary> 
+<img src="docs/validation/css-validation-notification.png" alt="CSS validation for Achievements.css">
+</details>
+
 
 ## JSX Validation ✅
 
@@ -958,6 +962,10 @@ The JSX code was validated using ESLint, confirming compliance and best practice
 <img src="docs/validation/eslint-Achievement.js.png" alt="ESLint validation for Achievements.js">
 </details>
 
+<details><summary>Notification.js</summary> 
+<img src="docs/validation/eslint-Notification.js.png" alt="ESLint validation for Achievements.js">
+</details>
+
 ### Wave
 
 The WAVE WebAIM tool was used to evaluate the accessibility of the FitShare website. However, each attempt to analyze the site returned the same image result, suggesting that WAVE was unable to access the hosted content.
@@ -1008,6 +1016,10 @@ The WAVE WebAIM tool was used to evaluate the accessibility of the FitShare webs
 
 <details><summary>Achievement</summary>
 <img src="docs/validation/wave-achievements.png">
+</details>
+
+<details><summary>Achievement</summary>
+<img src="docs/validation/wave-notification.png">
 </details>
 
 ##### Back to [top](#table-of-contents)
