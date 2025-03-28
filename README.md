@@ -645,30 +645,23 @@ Create a new user account and publish the first post. | The user should automati
 Add at least 1 like or 1 comment to a post. | The post owner should receive the "Popular Post" achievement. | Works as expected.
 Post 2 or more comments. | The user should receive the "Comment Champion" achievement. | Works as expected.
 
-<details><summary>Screenshot: Newbie Achievement</summary>
-<img src="docs/testing/user-stories-testing/achievement-create-newbie_1.1.png" alt="Newbie achievement screenshot">
-</details>
-<details><summary>Screenshot: Newbie Achievement</summary>
-<img src="docs/testing/user-stories-testing/achievement-create-newbie_1.2.png" alt="Newbie achievement screenshot">
+<details><summary>Screenshot: Newbie  Achievement</summary>
+<img src="docs/testing/user-stories-testing/user-story-28.1.png" alt="Newbie achievement screenshot">
 </details>
 
 <details><summary>Screenshot: Popular Post Achievement</summary>
-<img src="docs/testing/user-stories-testing/achievement-create-popular_2.1.png" alt="Popular Post achievement via likes screenshot">
-</details>
-<details><summary>Screenshot: Popular Post Achievement</summary>
-<img src="docs/testing/user-stories-testing/achievement-create-popular_2.2.png" alt="Popular Post achievement via likes screenshot">
+<img src="docs/testing/user-stories-testing/user-story-28.2.png" alt="Popular Post achievement via likes screenshot">
 </details>
 
+
 <details><summary>Screenshot: Comment Champion Achievement</summary>
-<img src="docs/testing/user-stories-testing/achievement-create-comment_champion_3.1.png" alt="Comment Champion achievement screenshot">
+<img src="docs/testing/user-stories-testing/user-story-28.3.png" alt="Comment Champion achievement screenshot">
 </details>
-<details><summary>Screenshot: Comment Champion Achievement</summary>
-<img src="docs/testing/user-stories-testing/achievement-create-comment_champion_3.2.png" alt="Comment Champion achievement screenshot">
-</details>
+
 
 <details><summary><strong>Screenshots: Notifications</strong></summary>
   <details><summary>Notification for Follow, Like and Comment </summary>
-    <img src="docs/testing/user-stories-testing/notification1.1.png" alt="Notification for follow screenshot">
+    <img src="docs/testing/user-stories-testing/user-story-29.1.png" alt="Notification for follow screenshot">
   </details>
 </details>
 
