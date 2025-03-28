@@ -1056,9 +1056,87 @@ All functionalities, including navigation, media, and interactivity, worked seam
 | Improved mobile responsiveness | Enhance layout styles to ensure better responsiveness for smaller screens by adjusting `flex-direction` and padding. |
 
 
+
+
 ## Deployment
 
 This section provides a detailed, step-by-step guide for deploying the FitShare frontend on Heroku.
+
+### Deploying the Frontend to Heroku
+
+#### Log in to Heroku and Create a New Heroku App
+- **Log in to Heroku:**  
+  Open your terminal and log in by running:
+  ```bash
+  heroku login
+
+<details><summary>Login to Heroku</summary> <img src="docs/testing/user-stories-testing/create_login_account.pngpng" alt="Login to Heroku"> </details>
+
+
+### Create the App:
+
+Create a new Heroku app (for example, fitshare-d428ae7f1a9f) by running:
+
+heroku create fitshare-d428ae7f1a9f
+
+<details><summary>Create App</summary> <img src="docs/testing/user-stories-testing/create_new_app.png" alt="Create app"> </details>
+
+
+### Configure Environment Variables
+
+In the Heroku dashboard, navigate to your app's Settings and click Reveal Config Vars.
+
+Set any required environment variables. For example, if your backend API is hosted separately, set:
+
+REACT_APP_API_URL to https://fitshareapi-b9588b2c11b9.herokuapp.com
+
+<details><summary>Config Vars</summary> <img src="docs/testing/user-stories-testing/create_confiq_vars.png" alt="Config Vars"> </details>
+
+
+### Create a Production Build
+
+Run the following command in your local repository to create an optimized production build:
+npm run build
+
+<details><summary>Production Build</summary> <img src="docs/testing/build_production.png" alt="Production Build"> </details>
+
+### Deploy Your Code
+
+Commit Your Changes:
+Ensure all changes are committed:
+
+git add .
+git commit -m "Prepare frontend for deployment on Heroku"
+
+### Set Heroku as Your Remote:
+Link your local repository to the Heroku app:
+
+heroku git:remote -a fitshare-d428ae7f1a9f
+
+
+### Push Your Code to Heroku:
+Deploy your code by pushing to the Heroku remote:
+
+git push heroku main
+
+### Verify Deployment
+Check the Live Site:
+
+### Connect to GitHub and Enable Automatic Deploys
+Log in to your Heroku Dashboard and select your app.
+
+Go to the Deploy tab.
+
+Under Deployment method, select GitHub.
+
+Search for your repository (e.g., Mabdillahi88/fitshare) and click Connect.
+
+Once connected, click Enable Automatic Deploys to allow Heroku to deploy your app automatically whenever changes are pushed to the GitHub repository.
+
+<details><summary>Connect to Heroku</summary> <img src="docs/testing/user-stories-testing/connect_heroku_github.png" alt="Connect to Heroku"> </details>
+
+Visit https://fitshare-d428ae7f1a9f.herokuapp.com/ in your browser to confirm that the frontend is live.
+
 
 ### Local Setup
 
@@ -1088,44 +1166,6 @@ To test your application locally, run:
 npm start
  
  The application will be available at [http://localhost:3000](http://localhost:3000).
-
-### Deploying to Heroku
-
-#### Create a New Heroku App
-
-**Log in to Heroku:**  
-Open your terminal and log in by running:
-```bash
-heroku login
-
-**Create the App:**  
-Create a new Heroku app (for example, `fitshare-d428ae7f1a9f`) by running:
-```bash
-heroku create fitshare-d428ae7f1a9f
-
-**Create a Production Build:**  
-Build the Production Version:  
-Run the following command to create an optimized production build:
-```bash
-npm run build
-
-**Deploy Your Code:**
-
-1. **Commit Your Changes:**  
-   Ensure all changes are committed:
-   ```bash
-   git add .
-   git commit -m "Prepare frontend for deployment on Heroku"
- 
- **Set Heroku as Your Remote:**  
-Link your local repository to the Heroku app:
-```bash
-heroku git:remote -a fitshare-d428ae7f1a9f
-
-**Verify Deployment:**
-
-- **Check the Live Site:**  
-  Visit [https://fitshare-d428ae7f1a9f.herokuapp.com/](https://fitshare-d428ae7f1a9f.herokuapp.com/) in your browser to confirm that the frontend is live.
 
 
 ## Config
