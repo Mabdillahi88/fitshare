@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const baseURL = "https://fitshareapi-b9588b2c11b9.herokuapp.com/";
+const baseURL = process.env.REACT_APP_API_URL || "https://fitshareapi-b9588b2c11b9.herokuapp.com/";
 
 export const handlers = [
   rest.get(`${baseURL}dj-rest-auth/user/`, (req, res, ctx) => {

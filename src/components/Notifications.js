@@ -10,7 +10,7 @@ const Notifications = () => {
     const fetchNotifications = async () => {
       try {
         const response = await fetch(
-          'https://fitshareapi-b9588b2c11b9.herokuapp.com/notifications/',
+          `${process.env.REACT_APP_API_URL}/notifications/`,
           { credentials: 'include' } // Include credentials if your API requires authentication
         );
         if (!response.ok) {

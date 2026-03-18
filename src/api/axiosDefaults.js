@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Set global defaults for axios
-axios.defaults.baseURL = "https://fitshareapi-b9588b2c11b9.herokuapp.com/";
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.withCredentials = true;
 

@@ -12,7 +12,7 @@ const Achievements = () => {
 
   const fetchAchievements = async () => {
     try {
-      const response = await fetch('https://fitshareapi-b9588b2c11b9.herokuapp.com/achievements/', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/achievements/`, {
         credentials: 'include', // if authentication is required
       });
       if (!response.ok) {
